@@ -41,7 +41,7 @@
           <h3 class="subheadline">hello, 未来。</h3>
         </div>
         <div class="major-0-img">
-          <img :src = "imgUrl" class="iphoneX">
+          <img :src = "img1" class="iphoneX">
         </div>
       </div>
       <div class="major-1">
@@ -143,6 +143,7 @@ import { swiper, swiperSlide } from 'vue-awesome-swiper'
 export default {
   data() {
     return {
+      img1:require("../../../src/assets/banzeF1.jpg"),
       major: [],
       ads: [],
       swiperOption: {
