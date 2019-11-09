@@ -2,7 +2,7 @@
   <div class="body">
     <header-bar></header-bar>
     <md-card>
-      <md-card-actions>
+      <!-- <md-card-actions>
         <div class="md-subhead">
           <span>Loop Mode / Infinite Loop</span>
           <span>（</span>
@@ -14,12 +14,18 @@
                   href="https://github.com/surmon-china/vue-awesome-swiper/blob/master/examples/20-infinite-loop.vue">
           <md-icon>code</md-icon>
         </md-button>
-      </md-card-actions>
+      </md-card-actions> -->
       <md-card-media>
         <!-- swiper -->
-        <swiper :options="swiperOption" style="line-height: 280px; font-size: 5rem; text-align: center;">
-          <swiper-slide>Slide 1</swiper-slide>
-          <swiper-slide>Slide 2</swiper-slide>
+        <swiper :options="swiperOption">
+          <!-- slides -->
+          <swiper-slide class="swiper-item" v-for='item of swiperList' :key='item.id'>
+              <img class='swiper-img' :src='item.imgUrl' alt="banner" />
+              <div class='imgTest'>{{item.text}}</div>
+              <div class='imgTest2'>{{item.text2}}</div>
+          </swiper-slide>
+          <!-- <swiper-slide style=" width:100%;"><img :src = "img1" ></swiper-slide>
+          <swiper-slide style=" width:100%;"><img :src = "img2" ></swiper-slide>
           <swiper-slide>Slide 3</swiper-slide>
           <swiper-slide>Slide 4</swiper-slide>
           <swiper-slide>Slide 5</swiper-slide>
@@ -27,7 +33,7 @@
           <swiper-slide>Slide 7</swiper-slide>
           <swiper-slide>Slide 8</swiper-slide>
           <swiper-slide>Slide 9</swiper-slide>
-          <swiper-slide>Slide 10</swiper-slide>
+          <swiper-slide>Slide 10</swiper-slide> -->
           <div class="swiper-pagination" slot="pagination"></div>
           <div class="swiper-button-prev" slot="button-prev"></div>
           <div class="swiper-button-next" slot="button-next"></div>
@@ -143,13 +149,32 @@ import { swiper, swiperSlide } from 'vue-awesome-swiper'
 export default {
   data() {
     return {
-      img1:require("../../../src/assets/banzeF1.jpg"),
       major: [],
       ads: [],
       swiperOption: {
           slidesPerView: 1,
           spaceBetween: 30,
           loop: true,
+          centeredSlides: true,
+          prevButton: '.swiper-button-prev',
+          nextButton: '.swiper-button-next',
+          //设置宽度为全屏  
+          width: window.innerWidth,
+          //窗口缩放时设置width
+          /* on: {
+            resize: function(){
+              this.params.width = window.innerWidth;
+              this.update();
+            },
+          } , */
+          height:200,
+          //每张播放时长3秒，自动播放
+          autoplay:{
+            delay:3000
+          },
+          //滑动速度
+          speed:500,
+          // delay:1000
           pagination: {
             el: '.swiper-pagination',
             clickable: true
@@ -158,7 +183,27 @@ export default {
             nextEl: '.swiper-button-next',
             prevEl: '.swiper-button-prev'
           }
-        }
+        }, 
+        swiperList:[
+                {
+                    id:'001',
+                    imgUrl:require("../../../src/assets/luhu2.jpg"),
+                    text:'非凡驾驭',
+                    text2:'全新路虎DEFENDER',
+                },
+                {
+                    id:'002',
+                    imgUrl:require("../../../src/assets/luhu1.jpg"),
+                    text:'艺揽胜境',
+                    text2:'智能高科技豪华全地形SUV',
+                },
+                {
+                    id:'003',
+                    imgUrl:require("../../../src/assets/luhu3.jpg"),
+                    text:'势如暴风',
+                    text2:'揽胜家族的前卫车型',
+                }
+            ]
     };
   },
   // mounted: function() {
@@ -174,6 +219,17 @@ export default {
   //       alert("网络错误不能访问");
   //     });
   // },
+  computed: {
+      swiper() {
+        return this.$refs.mySwiper.swiper
+      }
+    },
+    mounted() {
+      // current swiper instance
+      // 然后你就可以使用当前上下文内的swiper对象去做你想做的事了
+      console.log('this is current swiper instance object', this.swiper)
+      this.swiper.slideTo(3, 1000, false)
+    },
   components: {
     footerInfo,
     headerBar,
@@ -188,6 +244,29 @@ export default {
 };
 </script>
 <style scoped>
+.imgTest{
+  position:absolute;
+  width:260px;
+  height:100px;
+  border-right: 1px solid ghostwhite;
+  /* z-indent:2; */
+  left:100px;
+  top:600px;
+  font-size:55px;
+  color:ghostwhite;
+  padding-bottom: 50px;
+}
+.imgTest2{
+  position:absolute;
+  width:280px;
+  height:100px;
+  line-height: 100px;
+  /* z-indent:2; */
+  left:390px;
+  top:600px;
+  font-size:25px;
+  color:ghostwhite;
+}
 .headline {
   text-align: center;
   font-size: 56px;
@@ -225,6 +304,7 @@ export default {
 .major-0-img {
   margin-top: 315px;
 }
+
 .iphoneX {
   position: absolute;
   left: calc(50% - 491px);
