@@ -13,19 +13,19 @@
             </router-link>
           </li>
           <li class="header-item head-mac">
-            <router-link to="/mac">Mac</router-link>
+            <router-link to="/mac">车型</router-link>
           </li>
           <li class="header-item head-ipad">
             <router-link to="">iPad</router-link>
           </li>
           <li class="header-item head-iphone">
-            <router-link to="">iPhone</router-link>
+            <router-link to="">新闻</router-link>
           </li>
           <li class="header-item head-watch">
             <router-link to="">Watch</router-link>
           </li>
           <li class="header-item head-music">
-            <router-link to="/music">Music</router-link>
+            <router-link to="/music">售后</router-link>
           </li>
           <li class="header-item head-support">
             <router-link to="/support">技术支持</router-link>

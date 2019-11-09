@@ -4,23 +4,23 @@
     <div class="major">
       <div class="major-0">
         <div class="major-0-wrapper">
-          <h2 class="headline">{{major[0].title}}</h2>
-          <h3 class="subheadline">{{major[0].description}}</h3>
+          <h2 class="headline">车型</h2>
+          <h3 class="subheadline">hello, 未来。</h3>
         </div>
         <div class="major-0-img">
-          <img :src="major[0].img" class="iphoneX">
+          <img :src='src/assets/banzeF1' class="iphoneX">
         </div>
       </div>
       <div class="major-1">
         <div class="major-1-wrapper">
-          <h2 class="headline">{{major[1].title}}</h2>
-          <h3 class="subheadline">{{major[1].description}}</h3>
+          <h2 class="headline"></h2>
+          <h3 class="subheadline"></h3>
         </div>
         <div class="major-1-img">
-          <img :src="major[1].img" class="iphone8">
+          <!-- <img :src="" class="iphone8"> -->
         </div>
       </div>
-      <div class="major-2">
+      <!-- <div class="major-2">
         <div class="major-2-wrapper">
           <h2 class="headline">{{major[2].title}}</h2>
           <h3 class="subheadline now">{{major[2].description}}</h3>
@@ -28,11 +28,11 @@
         <div class="major-2-img">
           <img :src="major[2].img" class="choosenow">
         </div>
-      </div>
+      </div> -->
     </div>
     <div class="foot">
       <ul class="ads">
-        <li class="ads-0">
+        <!-- <li class="ads-0">
           <div class="ads-wrapper">
             <h4 class="logo-title">
               <img class="logo-image" :src="ads[0].title">
@@ -42,13 +42,13 @@
           <div class="ads-0-img">
             <img :src="ads[0].img">
           </div>
-        </li>
-        <li class="ads-1">
+        </li> -->
+        <!-- <li class="ads-1">
           <div class="ads-1-img">
             <img :src="ads[1].img">
           </div>
-        </li>
-        <li class="ads-2">
+        </li> -->
+        <!-- <li class="ads-2">
           <div class="ads-wrapper">
             <h4 class="logo-title ads-2-title">
               <div class="logo-title-font">
@@ -60,8 +60,8 @@
           <div class="ads-2-img">
             <img :src="ads[2].img">
           </div>
-        </li>
-        <li class="ads-3">
+        </li> -->
+        <!-- <li class="ads-3">
           <div class="ads-wrapper">
             <h4 class="logo-title ads-3-title">
               <div class="logo-title-font">
@@ -73,8 +73,8 @@
           <div class="ads-3-img">
             <img :src="ads[3].img">
           </div>
-        </li>
-        <li class="ads-4">
+        </li> -->
+        <!-- <li class="ads-4">
           <div class="ads-4-wrapper">
             <h4 class="logo-4-title">
               <img class="logo-image logo-4-image" :src="ads[4].title">
@@ -84,15 +84,15 @@
           <div class="ads-4-img">
             <img :src="ads[4].img">
           </div>
-        </li>
-        <li class="ads-5">
+        </li> -->
+        <!-- <li class="ads-5">
           <div class="ads-5-wrapper">
             <h4 class="logo-title logo-5-title">{{ads[5].title}}</h4>
           </div>
           <div class="ads-5-img">
             <img :src="ads[5].img">
           </div>
-        </li>
+        </li> -->
       </ul>
     </div>
     <footer-info></footer-info>
@@ -110,19 +110,19 @@ export default {
       ads: []
     };
   },
-  mounted: function() {
-    axios
-      .get(
-        "https://www.easy-mock.com/mock/5a67ef8cbdf9f5437bb4979a/Data/homedata"
-      )
-      .then(response => {
-        this.major = response.data.major;
-        this.ads = response.data.ads;
-      })
-      .catch(error => {
-        alert("网络错误不能访问");
-      });
-  },
+  // mounted: function() {
+  //   axios
+  //     .get(
+  //       "https://www.easy-mock.com/mock/5a67ef8cbdf9f5437bb4979a/Data/homedata"
+  //     )
+  //     .then(response => {
+  //       this.major = response.data.major;
+  //       this.ads = response.data.ads;
+  //     })
+  //     .catch(error => {
+  //       alert("网络错误不能访问");
+  //     });
+  // },
   components: {
     footerInfo,
     headerBar
