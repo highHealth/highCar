@@ -40,7 +40,7 @@
         </swiper>
       </md-card-media>
     </md-card>
-    <div class="major">
+    <!-- <div class="major">
       <div class="major-0">
         <div class="major-0-wrapper">
           <h2 class="headline">车型</h2>
@@ -49,90 +49,92 @@
         <div class="major-0-img">
           <img :src = "img1" class="iphoneX">
         </div>
-      </div>
-      <div class="major-1">
+      </div> -->
+      <!-- <div class="major-1">
         <div class="major-1-wrapper">
-          <h2 class="headline"></h2>
-          <h3 class="subheadline"></h3>
+          <h2 class="headline">img7</h2>
+          <h3 class="subheadline">img7</h3>
         </div>
         <div class="major-1-img">
-          <!-- <img :src="" class="iphone8"> -->
+          <img :src="img7" class="iphone8">
         </div>
-      </div>
+      </div> -->
       
       <!-- <div class="major-2">
         <div class="major-2-wrapper">
-          <h2 class="headline">{{major[2].title}}</h2>
-          <h3 class="subheadline now">{{major[2].description}}</h3>
+          <h2 class="headline">img7</h2>
+          <h3 class="subheadline now">img7</h3>
         </div>
         <div class="major-2-img">
-          <img :src="major[2].img" class="choosenow">
+          <img :src="img7" class="choosenow">
         </div>
-      </div> -->
-    </div>
+      </div>
+    </div> -->
     <div class="foot">
       <ul class="ads">
-        <!-- <li class="ads-0">
-          <div class="ads-wrapper">
+        <li class="ads-0">
+          <!-- <div class="ads-wrapper">
             <h4 class="logo-title">
-              <img class="logo-image" :src="ads[0].title">
+              <img class="logo-image" :src="img7">
             </h4>
-            <h5 class="logo-subheader">{{ads[0].description}}</h5>
-          </div>
+            <h5 class="logo-subheader">0].description</h5>
+          </div> -->
           <div class="ads-0-img">
-            <img :src="ads[0].img">
+            <!-- <img :src="img7"> -->
           </div>
-        </li> -->
-        <!-- <li class="ads-1">
+        </li>
+        <li class="ads-1">
           <div class="ads-1-img">
-            <img :src="ads[1].img">
+            <!-- <img :src="img7"> -->
+            <!-- <h5>人·车·生活</h5> -->
           </div>
-        </li> -->
-        <!-- <li class="ads-2">
+        </li>
+        <li class="ads-2">
           <div class="ads-wrapper">
             <h4 class="logo-title ads-2-title">
               <div class="logo-title-font">
-                {{ads[2].title}}
+                耐用
               </div>
             </h4>
-            <h5 class="logo-subheader ads-2-font">{{ads[2].description}}</h5>
+            <h5 class="logo-subheader ads-2-font">持之以恒</h5>
           </div>
           <div class="ads-2-img">
-            <img :src="ads[2].img">
+            <img :src="img6" class="fourimg">
           </div>
-        </li> -->
-        <!-- <li class="ads-3">
+        </li>
+        <li class="ads-3">
           <div class="ads-wrapper">
             <h4 class="logo-title ads-3-title">
               <div class="logo-title-font">
-                {{ads[3].title}}
+                科技
               </div>
             </h4>
-            <h5 class="logo-subheader ads-3-font">{{ads[3].description}}</h5>
+            <h5 class="logo-subheader ads-3-font">照亮回家路</h5>
           </div>
-          <div class="ads-3-img">
-            <img :src="ads[3].img">
+          <div class="ads-3-img" >
+            <img :src="img10" class="fourimg">
           </div>
-        </li> -->
-        <!-- <li class="ads-4">
+        </li>
+        <li class="ads-4">
           <div class="ads-4-wrapper">
             <h4 class="logo-4-title">
-              <img class="logo-image logo-4-image" :src="ads[4].title">
+              舒适
             </h4>
-            <h5 class="logo-subheader logo-4-info">{{ads[4].description}}</h5>
+            <h5 class="logo-subheader logo-4-info">豪华驾乘体验</h5>
           </div>
           <div class="ads-4-img">
-            <img :src="ads[4].img">
+            <img :src="img9" class="fourimg">
           </div>
-        </li> -->
-        <!-- <li class="ads-5">
+        </li>
+        <li class="ads-5">
           <div class="ads-5-wrapper">
-            <h4 class="logo-title logo-5-title">{{ads[5].title}}</h4>
+            <h4 class="logo-title logo-5-title">运动</h4>
+            <h5 class="logo-subheader logo-4-info">“基因”与生俱来</h5>
           </div>
           <div class="ads-5-img">
-            <img :src="ads[5].img">
+            <img :src="img7" class="fourimg">
           </div>
-        </li> -->
+        </li>
       </ul>
     </div>
     <footer-info></footer-info>
@@ -149,6 +151,12 @@ import { swiper, swiperSlide } from 'vue-awesome-swiper'
 export default {
   data() {
     return {
+      img1:require("../../../src/assets/banzeF1.jpg"),
+      img6:require("../../../src/assets/luhu3.jpg"),
+      img7:require("../../../src/assets/bsj1.jpg"),
+      img8:require("../../../src/assets/rs3.jpg"),
+      img9:require("../../../src/assets/lz3.jpg"),
+      img10:require("../../../src/assets/aodi2.jpg"),
       major: [],
       ads: [],
       swiperOption: {
@@ -266,6 +274,12 @@ export default {
   top:600px;
   font-size:25px;
   color:ghostwhite;
+}
+.fourimg{
+  width: auto;  
+  height: auto;  
+  max-width: 100%;  
+  max-height: 100%; 
 }
 .headline {
   text-align: center;
@@ -433,11 +447,11 @@ export default {
   position: absolute;
   top: calc(50% - 73px);
   left: calc(50% - 255px);
-  padding-top: 55px;
+  height: 560px;
 }
 .ads-3 {
   position: relative;
-  background: rgb(26, 26, 26);
+  background: rgb(0, 0, 0);
 }
 .ads-3-title {
   height: 44px;
@@ -451,9 +465,8 @@ export default {
 }
 .ads-3-img {
   position: absolute;
-  left: calc(50% - 225px);
   bottom: 0;
-  height: 457px;
+  height: 300px;
 }
 .ads-4 {
   position: relative;
@@ -479,12 +492,11 @@ export default {
 }
 .ads-4-img {
   position: absolute;
-  margin-top: 55px;
+  margin-top: 65px;
   left: calc(50% - 293px);
 }
 .ads-5 {
   position: relative;
-  background: #fafafa;
 }
 .ads-5-wrapper {
   margin-top: 0;
@@ -504,10 +516,9 @@ export default {
   line-height: 44px;
 }
 .ads-5-img {
-  padding-top: 55px;
   position: absolute;
-  top: calc(50% - 81px);
-  left: calc(50% - 66px);
+  top: calc(50% - -12px);
+
 }
 </style>
 
