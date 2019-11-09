@@ -151,7 +151,6 @@ import { swiper, swiperSlide } from 'vue-awesome-swiper'
 export default {
   data() {
     return {
-      img1:require("../../../src/assets/banzeF1.jpg"),
       img6:require("../../../src/assets/luhu3.jpg"),
       img7:require("../../../src/assets/bsj1.jpg"),
       img8:require("../../../src/assets/rs3.jpg"),
