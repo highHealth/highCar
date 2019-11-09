@@ -13,22 +13,22 @@
             </router-link>
           </li>
           <li class="header-item head-mac">
-            <router-link to="/mac">车型</router-link>
+            <router-link to="/mac"></router-link>
           </li>
           <li class="header-item head-ipad">
-            <router-link to="">iPad</router-link>
+            <router-link to="">车型</router-link>
           </li>
           <li class="header-item head-iphone">
-            <router-link to="">新闻</router-link>
+            <router-link to=""></router-link>
           </li>
           <li class="header-item head-watch">
-            <router-link to="">Watch</router-link>
+            <router-link to="">新闻</router-link>
           </li>
           <li class="header-item head-music">
-            <router-link to="/music">售后</router-link>
+            <router-link to="/music"></router-link>
           </li>
           <li class="header-item head-support">
-            <router-link to="/support">技术支持</router-link>
+            <router-link to="/support">售后</router-link>
           </li>
           <li class="header-item head-search">
             <router-link to="">
@@ -110,7 +110,7 @@ export default {
 }
 .content {
   width: 100%;
-  height: 44px;
+  height: 108px;
   background: rgba(0, 0, 0, 0.8);
 }
 .headbar {

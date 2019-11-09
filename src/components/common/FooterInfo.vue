@@ -40,25 +40,24 @@
           <li class="section-item">商务选购</li>
         </ul> -->
       </div>
-      <!-- <div class="section">
-        <div class="section-label">
+      <div class="section">
+        <!-- <div class="section-label">
           <h3 class="section-title">账户</h3>
-        </div>
-        <ul class="section-list">
+        </div> -->
+        <!-- <ul class="section-list">
           <li class="section-item">管理你的 Apple ID</li>
           <li class="section-item">Apple Store 账户</li>
           <li class="section-item">iCloud.com</li>
-        </ul>
-        <div class="section-label section-second">
-          <h3 class="section-title">Apple 价值观</h3>
+        </ul> -->
+        <div class="section-label">
+          <h3 class="section-title">品牌价值观</h3>
         </div>
         <ul class="section-list">
-          <li class="section-item">辅助功能</li>
           <li class="section-item">环境责任</li>
-          <li class="section-item">隐私</li>
-          <li class="section-item">供应商责任</li>
+          <li class="section-item">安全</li>
+          <li class="section-item">社会责任</li>
         </ul>
-      </div> -->
+      </div>
       <div class="section">
         <div class="section-label">
           <h3 class="section-title">关于品牌</h3>
