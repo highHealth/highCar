@@ -41,7 +41,7 @@
           <h3 class="subheadline">hello, 未来。</h3>
         </div>
         <div class="major-0-img">
-          <img :src='src/assets/banzeF1' class="iphoneX">
+          <img :src = "imgUrl" class="iphoneX">
         </div>
       </div>
       <div class="major-1">

@@ -3,55 +3,44 @@
     <div class="main">
       <div class="section">
         <div class="section-label">
-          <h3 class="section-title">选购及了解</h3>
+          <h3 class="section-title">车型</h3>
         </div>
         <ul class="section-list">
-          <li class="section-item">Mac</li>
-          <li class="section-item">iPad</li>
-          <li class="section-item">iPhone</li>
-          <li class="section-item">Watch</li>
-          <li class="section-item">Music</li>
-          <li class="section-item">iTunes</li>
-          <li class="section-item">iPod touch</li>
-          <li class="section-item">配件</li>
-          <li class="section-item">App Store 充值卡</li>
+          <li class="section-item">小型汽车</li>
+          <li class="section-item">大型汽车</li>
+          <li class="section-item">豪华汽车</li>
+          <li class="section-item">SUV</li>
+          <li class="section-item">高性能跑车</li>
+          <li class="section-item">新能源</li>
         </ul>
       </div>
       <div class="section">
         <div class="section-label">
-          <h3 class="section-title">Apple Store 商店</h3>
+          <h3 class="section-title">新闻</h3>
         </div>
         <ul class="section-list">
-          <li class="section-item">查找零售店</li>
-          <li class="section-item">Genius Bar 天才吧</li>
-          <li class="section-item">Today at Apple</li>
-          <li class="section-item">Apple 夏令营</li>
-          <li class="section-item">Field Trip 课外活动</li>
-          <li class="section-item">Apple Store App</li>
-          <li class="section-item">翻新和优惠</li>
-          <li class="section-item">分期付款</li>
-          <li class="section-item">重复使用和循环利用</li>
-          <li class="section-item">订单状态</li>
-          <li class="section-item">选购帮助</li>
+          <li class="section-item">品牌新闻</li>
+          <li class="section-item">车队新闻</li>
+          <li class="section-item">新车测评</li>
         </ul>
       </div>
       <div class="section">
         <div class="section-label">
-          <h3 class="section-title">教育应用</h3>
+          <h3 class="section-title">售后</h3>
         </div>
         <ul class="section-list">
-          <li class="section-item">Apple 与教育</li>
-          <li class="section-item">高校师生选购</li>
+          <li class="section-item">全国售后维修</li>
+          <li class="section-item">保险及赔偿</li>
         </ul>
-        <div class="section-label section-second">
+        <!-- <div class="section-label section-second">
           <h3 class="section-title">商务应用</h3>
-        </div>
-        <ul class="section-list">
+        </div> -->
+        <!-- <ul class="section-list">
           <li class="section-item">Apple 与商务</li>
           <li class="section-item">商务选购</li>
-        </ul>
+        </ul> -->
       </div>
-      <div class="section">
+      <!-- <div class="section">
         <div class="section-label">
           <h3 class="section-title">账户</h3>
         </div>
@@ -69,17 +58,13 @@
           <li class="section-item">隐私</li>
           <li class="section-item">供应商责任</li>
         </ul>
-      </div>
+      </div> -->
       <div class="section">
         <div class="section-label">
-          <h3 class="section-title">关于Apple</h3>
+          <h3 class="section-title">关于品牌</h3>
         </div>
         <ul class="section-list">
-          <li class="section-item">Newsroom</li>
-          <li class="section-item">Apple 管理层</li>
-          <li class="section-item">工作机会</li>
-          <li class="section-item">活动</li>
-          <li class="section-item">联系 Apple</li>
+          <li class="section-item">品牌介绍</li>
         </ul>
       </div>
     </div>
