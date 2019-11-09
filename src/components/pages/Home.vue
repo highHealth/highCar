@@ -20,6 +20,16 @@
           <!-- <img :src="" class="iphone8"> -->
         </div>
       </div>
+      <slider animation="fade">
+        <slider-item
+          v-for="(i, index) in list"
+          :key="index"
+          :style="i"
+          @click="hello"
+        >
+          <p style="line-height: 280px; font-size: 5rem; text-align: center;">Page{{ index + 1 }}</p>
+        </slider-item>
+      </slider>
       <!-- <div class="major-2">
         <div class="major-2-wrapper">
           <h2 class="headline">{{major[2].title}}</h2>
@@ -102,12 +112,19 @@
 <script>
 import axios from "axios";
 import footerInfo from "@/components/common/FooterInfo";
-import headerBar from "@/components/common/HeaderBar"
+import headerBar from "@/components/common/HeaderBar";
+import Vue from 'vue'
+import { Slider, SliderItem } from 'vue-easy-slider'
 export default {
   data() {
     return {
       major: [],
-      ads: []
+      ads: [],
+      list: [
+        { backgroundColor: '#3f51b5', width: '100%', height: '100%' },
+        { backgroundColor: '#eee', width: '100%', height: '100%' },
+        { backgroundColor: '#f44336', width: '100%', height: '100%' },
+      ],
     };
   },
   // mounted: function() {
@@ -125,8 +142,15 @@ export default {
   // },
   components: {
     footerInfo,
-    headerBar
-  }
+    headerBar,
+    Slider,
+    SliderItem,
+  },
+  methods: {
+    hello($event) {
+      console.log(`hello index: ${$event}`)
+    },
+  },
 };
 </script>
 <style scoped>
