@@ -72,23 +72,14 @@
     </div> -->
     <div class="foot">
       <ul class="ads">
-        <li class="ads-0">
-          <!-- <div class="ads-wrapper">
-            <h4 class="logo-title">
-              <img class="logo-image" :src="img7">
-            </h4>
-            <h5 class="logo-subheader">0].description</h5>
-          </div> -->
-          <div class="ads-0-img">
-            <!-- <img :src="img7"> -->
+        <div class="ads-0" >
+          <div style="width:300px; height:230px;margin-top:100px;margin:0 auto;border:1px solid red;line-height:40px">
+            <img :src="fangxiangpan" style="width:45px;height:45px;text-align: center"/>
+            <h1 style="text-align:center">预约试驾</h1>
+            <h3 style="text-align:center">纵享非凡驾趣</h3>
+            <button class="yuyue" style="width:100px;height:30px;border:1px solid black;background-color:green;line-height:30px;color:white">即刻预约</button>
           </div>
-        </li>
-        <li class="ads-1">
-          <div class="ads-1-img">
-            <!-- <img :src="img7"> -->
-            <!-- <h5>人·车·生活</h5> -->
-          </div>
-        </li>
+        </div>
         <li class="ads-2">
           <div class="ads-wrapper">
             <h4 class="logo-title ads-2-title">
@@ -156,6 +147,7 @@ export default {
       img8:require("../../../src/assets/rs3.jpg"),
       img9:require("../../../src/assets/lz3.jpg"),
       img10:require("../../../src/assets/aodi2.jpg"),
+      fangxiangpan:require("../../../src/assets/fangxiangpan.jpg"),
       major: [],
       ads: [],
       swiperOption: {
@@ -386,7 +378,12 @@ export default {
   overflow: hidden;
 }
 .ads-0 {
-  position: relative;
+  /* position: relative; */
+  height: 350px;
+  width: 100%;
+}
+.yuyue{
+
 }
 .ads-wrapper {
   position: absolute;
