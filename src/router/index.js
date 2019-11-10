@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Home from '@/components/pages/Home'
-import Mac from '@/components/pages/Mac'
+import Ctype from '@/components/pages/Ctype'
 import Music from '@/components/pages/Music'
 import Support from '@/components/pages/Support.vue'
 
@@ -16,9 +16,9 @@ export default new Router({
       component: Home
     },
     {
-      path: '/mac',
-      name: 'Mac',
-      component: Mac
+      path: '/type',
+      name: 'Ctype',
+      component: Ctype
     },
     {
       path: '/music',

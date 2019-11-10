@@ -13,10 +13,10 @@
             </router-link>
           </li>
           <li class="header-item head-mac">
-            <router-link to="/mac"></router-link>
+            <router-link to=""></router-link>
           </li>
           <li class="header-item head-ipad">
-            <router-link to="">车型</router-link>
+            <router-link to="/type" @mouseenter.native="on" >车型</router-link>
           </li>
           <li class="header-item head-iphone">
             <router-link to=""></router-link>
@@ -27,7 +27,7 @@
           <li class="header-item head-music">
             <router-link to="/music"></router-link>
           </li>
-          <li class="header-item head-support">
+          <li class="header-item head-watch">
             <router-link to="/support">售后</router-link>
           </li>
           <li class="header-item head-search">
@@ -44,6 +44,24 @@
         
       </div>
     </div>
+    <div class="content1" v-if="seen"  @mouseenter="on" @mouseleave="over" >
+      <router-link to="" class="icontp">
+        <h2 class="xbt">豪华</h2>
+        <img :src="imghigh" class="cimg"/><br/>
+      </router-link>
+      <router-link to="" class="icontp">
+        <h2 class="xbt">高性能</h2>
+        <img :src="imgrun" class="cimg"/><br/>
+      </router-link>
+      <router-link to="" class="icontp">
+        <h2 class="xbt">SUV</h2>
+        <img :src="imgsuv" class="cimg"/><br/>
+      </router-link>
+      <router-link to="" class="icontp">
+        <h2 class="xbt">新能源</h2>
+        <img :src="imge" class="cimg"/><br/>
+      </router-link>
+      </div>
     <div class="bagview" id="bag">
       <div class="bag-content">
         <p class="bag-message-empty">你的购物袋是空的</p>
@@ -72,6 +90,16 @@
 </template>
 <script>
 export default {
+  data(){
+    return{
+      seen:false,
+
+      imghigh:require("../../../src/assets/icon/high_icon.png"),
+      imgrun:require("../../../src/assets/icon/run_icon.jpg"),
+      imgsuv:require("../../../src/assets/icon/suv_icon.png"),
+      imge:require("../../../src/assets/icon/e_icon.png"),
+    }
+  },
   methods: {
     showBag(v) {
       console.log(v);
@@ -81,6 +109,14 @@ export default {
       } else {
         bag.style.display = "none";
       }
+    },
+    on(){
+      this.seen = true;
+
+    },
+    over(){
+      this.seen = false;
+
     }
   }
 };
@@ -90,10 +126,36 @@ export default {
   margin: 0;
   padding: 0;
 }
+.cimg{
+  margin-top: 3px;
+}
+.icontp{
+  text-decoration:none;
+  font-size: 10px;
+  float: left;
+  margin-left: 220px;
+  margin-top: 10px;
+}
 .adcontent {
   width: 100%;
   height: 40px;
   background: #444;
+}
+.xbt{
+  color:rgb(0, 0, 0);
+  margin-top: 3px;
+  margin-left: 26px;
+  font-style: normal;
+  font-family: "SF Pro SC", "HanHei SC", "SF Pro Text", "Myriad Set Pro",
+    "PingFang SC", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.btext{
+  height: 70px;
+  width: 120px;
+  color:rgb(0, 0, 0);
+  font-size: 2px;
+  /* border-style:solid;
+	border-color:red; */
 }
 .ad {
   width: 976px;
@@ -112,6 +174,11 @@ export default {
   width: 100%;
   height: 108px;
   background: rgba(0, 0, 0, 0.8);
+}
+.content1 {
+  width: 100%;
+  height: 100px;
+  background: #f7f5f6;
 }
 .headbar {
   width: 1000px;
@@ -146,6 +213,7 @@ export default {
   padding: 0 10px;
   line-height: 44px;
   text-align: center;
+  font-size: 13px;
 }
 .header-item :hover {
   opacity: 0.65;
@@ -183,7 +251,7 @@ export default {
   width: 34px;
 }
 .icon-bag-copy {
-  font-size: 16px;
+  font-size: 6px;
 }
 /* 购物袋的样式 */
 .bagview {

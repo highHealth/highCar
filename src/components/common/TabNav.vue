@@ -1,6 +1,6 @@
 <template>
   <div class="apps">
-    <div class="app-content">
+    <!-- <div class="app-content">
       <div class="app-title">
         <div class="app-title-content">
           <h3 class="app-title-headline">内置 App</h3>
@@ -95,7 +95,7 @@
           </div>
         </div>
       </div>
-    </div>
+    </div> -->
   </div>
 </template>
 <script>
