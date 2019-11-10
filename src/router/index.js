@@ -4,6 +4,7 @@ import Home from '@/components/pages/Home'
 import Mac from '@/components/pages/Mac'
 import Music from '@/components/pages/Music'
 import Support from '@/components/pages/Support.vue'
+import Map from '@/components/pages/Map.vue'
 
 Vue.use(Router)
 
@@ -29,6 +30,11 @@ export default new Router({
       path: '/support',
       name: 'Support',
       component: Support
+    },
+    {
+      path: '/map',
+      name: 'Map',
+      component: Map
     }
   ]
 })

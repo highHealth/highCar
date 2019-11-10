@@ -44,11 +44,13 @@
     <div class="foot">
       <ul class="ads">
         <div class="ads-0" >
-          <div style="width:300px; height:230px;margin-top:100px;margin:0 auto;border:1px solid red;line-height:40px">
-            <img :src="fangxiangpan" style="width:45px;height:45px;text-align: center"/>
-            <h1 style="text-align:center">预约试驾</h1>
-            <h3 style="text-align:center">纵享非凡驾趣</h3>
-            <button class="yuyue" style="width:100px;height:30px;border:1px solid black;background-color:green;line-height:30px;color:white">即刻预约</button>
+          <div class="ads-0-1" >
+            <div class="appointment-0"><img :src="fxp2" class="appointment-0-img"/></div>
+            <div class="appointment-1">预约试驾</div>
+            <div class="appointment-2">纵享非凡驾趣体验</div>
+            <div class="appointment-3">
+              <button class="appointment" @click="gotoMap" >即刻预约</button>
+            </div>
           </div>
         </div>
         <li class="ads-2">
@@ -118,7 +120,7 @@ export default {
       img8:require("../../../src/assets/rs3.jpg"),
       img9:require("../../../src/assets/lz3.jpg"),
       img10:require("../../../src/assets/aodi2.jpg"),
-      fangxiangpan:require("../../../src/assets/fangxiangpan.jpg"),
+      fxp2:require("../../../src/assets/fxp2.jpg"),
       major: [],
       ads: [],
       swiperOption: {
@@ -131,12 +133,12 @@ export default {
           //设置宽度为全屏  
           width: window.innerWidth,
           //窗口缩放时设置width
-          /* on: {
+          on: {
             resize: function(){
               this.params.width = window.innerWidth;
               this.update();
             },
-          } , */
+          } ,
           height:200,
           //每张播放时长3秒，自动播放
           autoplay:{
@@ -159,7 +161,7 @@ export default {
                     id:'001',
                     imgUrl:require("../../../src/assets/luhu2.jpg"),
                     text:'非凡驾驭',
-                    text2:'全新路虎DEFENDER',
+                    text2:'全新出品DEFENDER',
                 },
                 {
                     id:'002',
@@ -171,7 +173,7 @@ export default {
                     id:'003',
                     imgUrl:require("../../../src/assets/luhu3.jpg"),
                     text:'势如暴风',
-                    text2:'揽胜家族的前卫车型',
+                    text2:'越野家族的前卫车型',
                 }
             ]
     };
@@ -210,6 +212,10 @@ export default {
     hello($event) {
       console.log(`hello index: ${$event}`)
     },
+    gotoMap(){
+      this.$router.push({path: '/map'})
+
+    }
   },
 };
 </script>
@@ -236,6 +242,40 @@ export default {
   top:600px;
   font-size:25px;
   color:ghostwhite;
+}
+.ads-0-1{
+  margin:0 auto;
+  width:300px; 
+  height:230px;
+}
+.appointment-0{
+  margin: 0 auto 10px;
+  text-align:center;
+  margin-top:15px
+}
+.appointment-0-img{
+  background-size: contain!important;
+  width:43px;
+  height:43px
+}
+.appointment-1{
+  text-align:center;
+  font-family:华文细黑;
+  font-size: 42px;
+  color: #333;
+  letter-spacing: -.02em
+}
+.appointment-2{
+  text-align:center;
+  margin: 0 auto;
+  font-size: 18px;
+  line-height: 2;
+  color: #333;
+  letter-spacing: -.02em
+}
+.appointment-3{
+  margin: 0 auto;
+  text-align:center
 }
 .fourimg{
   width: auto;  
@@ -350,10 +390,23 @@ export default {
 }
 .ads-0 {
   /* position: relative; */
-  height: 350px;
+  height: 250px;
   width: 100%;
+  background-color: #f2f1f0;
+  margin: 0;
+  padding:0;
+  padding-top: 10px;
 }
-.yuyue{
+.appointment{
+  width:120px;
+  height:40px;
+  border:1px solid black;
+  background-color:#0C2340;
+  line-height:40px;
+  color:white;
+  text-rendering: auto;
+  letter-spacing: normal;
+  margin-top:16px
 
 }
 .ads-wrapper {
