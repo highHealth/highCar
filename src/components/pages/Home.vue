@@ -40,55 +40,9 @@
         </swiper>
       </md-card-media>
     </md-card>
-    <!-- <div class="major">
-      <div class="major-0">
-        <div class="major-0-wrapper">
-          <h2 class="headline">车型</h2>
-          <h3 class="subheadline">hello, 未来。</h3>
-        </div>
-        <div class="major-0-img">
-          <img :src = "img1" class="iphoneX">
-        </div>
-      </div> -->
-      <!-- <div class="major-1">
-        <div class="major-1-wrapper">
-          <h2 class="headline">img7</h2>
-          <h3 class="subheadline">img7</h3>
-        </div>
-        <div class="major-1-img">
-          <img :src="img7" class="iphone8">
-        </div>
-      </div> -->
-      
-      <!-- <div class="major-2">
-        <div class="major-2-wrapper">
-          <h2 class="headline">img7</h2>
-          <h3 class="subheadline now">img7</h3>
-        </div>
-        <div class="major-2-img">
-          <img :src="img7" class="choosenow">
-        </div>
-      </div>
-    </div> -->
+
     <div class="foot">
       <ul class="ads">
-        <li class="ads-0">
-          <!-- <div class="ads-wrapper">
-            <h4 class="logo-title">
-              <img class="logo-image" :src="img7">
-            </h4>
-            <h5 class="logo-subheader">0].description</h5>
-          </div> -->
-          <div class="ads-0-img">
-            <!-- <img :src="img7"> -->
-          </div>
-        </li>
-        <li class="ads-1">
-          <div class="ads-1-img">
-            <!-- <img :src="img7"> -->
-            <!-- <h5>人·车·生活</h5> -->
-          </div>
-        </li>
         <li class="ads-2">
           <div class="ads-wrapper">
             <h4 class="logo-title ads-2-title">
@@ -393,6 +347,7 @@ export default {
   z-index: 2;
   text-align: center;
   width: 100%;
+  height: 140px;
 }
 .logo-title {
   margin-top: 0;
