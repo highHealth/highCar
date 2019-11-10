@@ -1,7 +1,6 @@
 <template>
   <div class="app">
     <!-- 顶部的导航 -->
-    <h2>kkkkkkkkkk</h2>
     <header-bar></header-bar>
     <!-- 导航下面的二级导航：小电脑 -->
     <div class="macheader-content">
