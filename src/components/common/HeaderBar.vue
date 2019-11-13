@@ -1,19 +1,9 @@
 <template>
   <div v-on:click="showBag">
     <div class="content">
-      <div style="width:400px;height:30px;border: 1px solid red;float:right">
-        <ul>
-          <li style="display: inline-block;font-size:12px">
-            <router-link to="" style=" text-decoration: none;height: 30px;line-height: 30px;margin-left: 20px;color:white">登陆</router-link>
-          </li>
-          <li style="display: inline-block;font-size:12px">
-            <router-link to="" style=" text-decoration: none; height: 30px;line-height: 30px;margin-left: 20px;display: inline-block;color:white">注册</router-link>
-          </li>
-        </ul>
-      </div>
       <div class="headbar">
         <ul class="header-list">
-          <li class="header-item head-models">
+          <li class="header-item head-logo">
             <router-link to="/" >
                 <img :src="imgLogo" class="logo" />
             </router-link>
@@ -29,6 +19,12 @@
           </li>
           <li class="header-item head-mu">
             <router-link to="/mu">关于我们</router-link>
+          </li>
+          <li class="header-item head-registered head-xi" >
+            <router-link to="/login" style="font-size:12px;">登陆</router-link>
+          </li>
+          <li class="header-item head-registered">
+            <router-link to="" style="font-size:12px;">注册</router-link>
           </li>
           <!-- <li class="header-item head-mu">
             <router-link to="/mu"></router-link>
@@ -212,12 +208,11 @@ export default {
   /* position: absolute; */
   cursor: pointer;
   list-style: none;
-  width: auto;
+  width: 1000px;
   color: white;
   font-size: 16px;
   font-weight: 100;
-  margin:40px 0px 0px 40px;
-
+  margin-top:40px;
 }
 .header-item {
   height: 50px;
@@ -229,6 +224,9 @@ export default {
   font: normal  16px/3.42857 "Microsoft YaHei",Helvetica,Arial,serif;
     line-height: normal;
 
+}
+.head-logo{
+  margin-left: 0px;
 }
 .header-item a {
   text-decoration: none;
@@ -244,6 +242,7 @@ export default {
   opacity: 0.85;
   color:rgba(89, 201, 37, 0.967)
 }
+
 .head-tea {
   margin-left: 0;
   width: 40px;
@@ -356,6 +355,15 @@ export default {
 }
 .bagview-nav-link:hover {
   text-decoration: underline;
+}
+.head-registered{
+    margin: 0 ;
+    height: 20px;
+    line-height: 20px;
+    
+}
+.head-xi{
+    margin-left: 120px;
 }
 </style>
 
