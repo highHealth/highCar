@@ -9,10 +9,16 @@
           <li class="header-item head-models">
             <router-link to="/type" @mouseenter.native="on" >车型</router-link>
           </li>
-          <li class="header-item head-news">
-            <router-link to="">新闻</router-link>
+          <li class="header-item head-iphone">
+            <router-link to=""></router-link>
           </li>
-          <li class="header-item head-news">
+          <li class="header-item head-watch">
+            <router-link to="/News">新闻</router-link>
+          </li>
+          <li class="header-item head-music">
+            <router-link to=""></router-link>
+          </li>
+          <li class="header-item head-watch">
             <router-link to="/support">售后</router-link>
           </li>
           <li class="header-item head-mu">
@@ -53,20 +59,20 @@
         
       </div>
     </div>
-    <div class="content1" v-if="seen"  @mouseenter="on" @mouseleave="over" >
-      <router-link to="" class="icontp">
+    <div class="content1" v-if="seen"  @mouseenter="on" @mouseleave="over"  >
+      <router-link to="/js/high" class="icontp" @click.native="dj">
         <h2 class="xbt">豪华</h2>
         <img :src="imghigh" class="cimg"/><br/>
       </router-link>
-      <router-link to="" class="icontp">
+      <router-link to="/js/sport" class="icontp" @click.native="dj">
         <h2 class="xbt">高性能</h2>
         <img :src="imgrun" class="cimg"/><br/>
       </router-link>
-      <router-link to="" class="icontp">
+      <router-link to="/js/suv" class="icontp" @click.native="dj">
         <h2 class="xbt">SUV</h2>
         <img :src="imgsuv" class="cimg"/><br/>
       </router-link>
-      <router-link to="" class="icontp">
+      <router-link to="/js/ete" class="icontp" @click.native="dj">
         <h2 class="xbt">新能源</h2>
         <img :src="imge" class="cimg"/><br/>
       </router-link>
@@ -111,7 +117,7 @@ export default {
   },
   methods: {
     showBag(v) {
-      console.log(v);
+      // console.log(v);
       var bag = document.getElementById("bag");
       if (v.target.className == "icon iconfont icon-bag-copy") {
         bag.style.display = "block";
@@ -122,6 +128,9 @@ export default {
     on(){
       this.seen = true;
 
+    },
+    dj(){
+      window.location.reload();
     },
     over(){
       this.seen = false;

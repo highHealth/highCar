@@ -110,17 +110,17 @@ export default {
   },
 
   created: function() {
-    axios
-      .get(
-        "https://www.easy-mock.com/mock/5a67ef8cbdf9f5437bb4979a/Data/appsData"
-      )
-      .then(response => {
-        this.inapp = response.data.inapp;
-        this.majorapp = response.data.majorapp;
-      })
-      .catch(error => {
-        alert("网络错误不能访问");
-      });
+    // axios
+    //   .get(
+    //     "https://www.easy-mock.com/mock/5a67ef8cbdf9f5437bb4979a/Data/appsData"
+    //   )
+    //   .then(response => {
+    //     this.inapp = response.data.inapp;
+    //     this.majorapp = response.data.majorapp;
+    //   })
+    //   .catch(error => {
+    //     alert("网络错误不能访问");
+    //   });
   },
   methods: {
     clickInItem(v) {

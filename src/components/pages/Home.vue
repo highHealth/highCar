@@ -11,9 +11,6 @@
               <div class='imgTest'>{{item.text}}</div>
               <div class='imgTest2'>{{item.text2}}</div>
           </swiper-slide>
-          <!-- <swiper-slide style=" width:100%;"><img :src = "img1" ></swiper-slide>
-          <swiper-slide style=" width:100%;"><img :src = "img2" ></swiper-slide>
-          <swiper-slide>Slide 3</swiper-slide> -->
           <div class="swiper-pagination" slot="pagination"></div>
           <div class="swiper-button-prev" slot="button-prev"></div>
           <div class="swiper-button-next" slot="button-next"></div>
