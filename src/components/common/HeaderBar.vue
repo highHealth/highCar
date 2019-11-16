@@ -3,20 +3,14 @@
     <div class="content">
       <div class="headbar">
         <ul class="header-list">
-          <li class="header-item head-logo">
+          <li class="header-item head-models">
             <router-link to="/" >首页</router-link>
           </li>
           <li class="header-item head-models">
             <router-link to="/type" @mouseenter.native="on" >车型</router-link>
           </li>
-          <li class="header-item head-iphone">
-            <router-link to=""></router-link>
-          </li>
           <li class="header-item head-watch">
             <router-link to="/News">新闻</router-link>
-          </li>
-          <li class="header-item head-music">
-            <router-link to=""></router-link>
           </li>
           <li class="header-item head-watch">
             <router-link to="/support">售后</router-link>
