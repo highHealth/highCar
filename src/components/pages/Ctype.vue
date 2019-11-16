@@ -2,15 +2,16 @@
   <div class="app">
     <!-- 顶部的导航 -->
     <header-bar></header-bar>
-    <div class="machines">
+    <div class="hines">
       <!-- 豪华车型 -->
       <div class="section-high">
         <div class="high-content">
           <h2 class="product-headline high-headline">豪华车型</h2>
           <h3 class="product-subheadline high-subheadline">从容锐意，乐享人生</h3>
-          <img :src="imgbz" class="high-img">
+          <img :src="imgbz" class="high-img" />
           <div class="product-more">
-            <div class="more-product-cta high-cta">了解更多</div>
+            <router-link to="/js/high" class="more-product-cta high-cta">了解更多</router-link>
+            <!-- <div class="more-product-cta high-cta"></div> -->
           </div>
         </div>
       </div>
@@ -20,11 +21,11 @@
           <h2 class="product-headline">高性能车型</h2>
           <h3 class="product-subheadline">锋芒毕露</h3>
           <div class="product-more">
-            <div class="more-product-cta">了解更多</div>
-             
+            <!-- <div class="more-product-cta">了解更多</div> -->
+            <router-link to="/js/sport" class="more-product-cta">了解更多</router-link>
           </div>
           <div class="f1-img-content">
-            <img :src="imgf1" class="f1-img">
+            <img :src="imgf1" class="f1-img" />
           </div>
         </div>
       </div>
@@ -34,10 +35,10 @@
           <h2 class="product-headline">SUV车型</h2>
           <h3 class="product-subheadline">无可阻挡</h3>
           <div class="product-more">
-            <div class="more-product-cta">了解更多</div>
-             
+            <!-- <div class="more-product-cta">了解更多</div> -->
+            <router-link to="/js/suv" class="more-product-cta">了解更多</router-link>
           </div>
-          <img :src="imgsuv" class="suv-img">
+          <img :src="imgsuv" class="suv-img" />
         </div>
       </div>
       <div class="section-e">
@@ -45,10 +46,11 @@
           <h2 class="product-headline">新能源车型</h2>
           <h3 class="product-subheadline">进取，永无止境</h3>
           <div class="product-more">
-            <div class="more-product-cta">了解更多</div>
+            <!-- <div class="more-product-cta">了解更多</div> -->
+            <router-link to="/js/ete" class="more-product-cta">了解更多</router-link>
           </div>
           <div class="e-img-content">
-            <img :src="imgts" class="e-img">
+            <img :src="imgts" class="e-img" />
           </div>
         </div>
       </div>
@@ -68,10 +70,10 @@ export default {
       all: {},
       headbar: [],
       machines: [],
-      imgbz:require("../../../src/assets/bcbig.jpg"),
-      imgf1:require("../../../src/assets/banzeF1.jpg"),
-      imgsuv:require("../../../src/assets/luhu2.jpg"),
-      imgts:require("../../../src/assets/tesila.jpg")
+      imgbz: require("../../../src/assets/bcbig.jpg"),
+      imgf1: require("../../../src/assets/banzeF1.jpg"),
+      imgsuv: require("../../../src/assets/luhu2.jpg"),
+      imgts: require("../../../src/assets/tesila.jpg")
     };
   },
   components: {
@@ -92,7 +94,8 @@ export default {
     //   .catch(error => {
     //     alert("网络错误不能访问");
     //   });
-  }
+  },
+  methods: {}
 };
 </script>
 <style scoped>
@@ -146,6 +149,8 @@ export default {
   position: relative;
   display: inline-block;
   margin-right: 25px;
+  text-decoration: none;
+  color: #0070c9;
 }
 .more-product-cta::after {
   content: "";
@@ -163,7 +168,7 @@ export default {
   margin-top: 0;
   width: 100%;
   padding-top: 74px;
-  height: 900px;
+  height: 800px;
   background: #1a1a1a;
   text-align: center;
   z-index: 1;
