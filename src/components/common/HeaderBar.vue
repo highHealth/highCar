@@ -1,21 +1,14 @@
 <template>
   <div v-on:click="showBag">
-    <div class="adcontent">
-      <div class="ad">&lt; 广告 &gt;</div>
-    </div>
     <div class="content">
       <div class="headbar">
         <ul class="header-list">
-          <li class="header-item head-apple">
-            <router-link to="/">
-              <i class="icon iconfont icon-iconfontapple"></i>
-
+          <li class="header-item head-logo">
+            <router-link to="/" >
+                <img :src="imgLogo" class="logo" />
             </router-link>
           </li>
-          <li class="header-item head-mac">
-            <router-link to=""></router-link>
-          </li>
-          <li class="header-item head-ipad">
+          <li class="header-item head-models">
             <router-link to="/type" @mouseenter.native="on" >车型</router-link>
           </li>
           <li class="header-item head-iphone">
@@ -30,6 +23,30 @@
           <li class="header-item head-watch">
             <router-link to="/support">售后</router-link>
           </li>
+          <li class="header-item head-mu">
+            <router-link to="/mu">关于我们</router-link>
+          </li>
+          <li class="header-item head-registered head-xi" >
+            <router-link to="/login" style="font-size:12px;">登陆</router-link>
+          </li>
+          <li class="header-item head-registered">
+            <router-link to="" style="font-size:12px;">注册</router-link>
+          </li>
+          <!-- <li class="header-item head-mu">
+            <router-link to="/mu"></router-link>
+          </li> 
+          <li class="header-item head-i">
+            <router-link to=""></router-link>
+          </li>
+          <li class="header-item head-tea">
+            <router-link to="/">
+              <i class="icon iconfont icon-iconfontapple"></i>
+
+            </router-link>
+          </li>
+          <li class="header-item head-peipi">
+            <router-link to=""></router-link>
+          </li> 
           <li class="header-item head-search">
             <router-link to="">
               <i class="icon iconfont icon-fangdajing"></i>
@@ -39,7 +56,7 @@
             <router-link to="">
               <i class="icon iconfont icon-bag-copy"></i>
             </router-link>
-          </li>
+          </li> -->
 		    </ul>
         
       </div>
@@ -93,7 +110,7 @@ export default {
   data(){
     return{
       seen:false,
-
+      imgLogo:require("../../../src/assets/logo3.jpg"),
       imghigh:require("../../../src/assets/icon/high_icon.png"),
       imgrun:require("../../../src/assets/icon/run_icon.jpg"),
       imgsuv:require("../../../src/assets/icon/suv_icon.png"),
@@ -142,7 +159,7 @@ export default {
 .adcontent {
   width: 100%;
   height: 40px;
-  background: #444;
+  background: #504;
 }
 .xbt{
   color:rgb(0, 0, 0);
@@ -173,10 +190,16 @@ export default {
   line-height: 40px;
   font-style: normal;
 }
+.logo{
+  vertical-align: bottom;
+  width: 60px;
+  height: 50px;
+}
 .content {
   width: 100%;
   height: 108px;
   background: rgba(0, 0, 0, 0.8);
+  padding-top:10px 
 }
 .content1 {
   width: 100%;
@@ -184,64 +207,72 @@ export default {
   background: #f7f5f6;
 }
 .headbar {
-  width: 1000px;
-  height: 44px;
-  margin: auto;
+  width: 900px;
+  height: 60px;
+  margin: auto; 
 }
 .header-list {
-  margin-top: 0;
-  margin-bottom: 0;
   padding: 0;
-  height: 44px;
-  position: absolute;
+  height: 50px;
+  /* position: absolute; */
   cursor: pointer;
   list-style: none;
-  width: auto;
+  width: 1000px;
   color: white;
-  font-size: 13px;
+  font-size: 16px;
   font-weight: 100;
+  margin-top:40px;
 }
 .header-item {
-  height: 44px;
-  margin-left: 64px;
+  height: 50px;
+  line-height: 50px;
+  margin-left: 80px;
   display: inline-block;
   vertical-align: top;
   opacity: 1;
+  font: normal  16px/3.42857 "Microsoft YaHei",Helvetica,Arial,serif;
+    line-height: normal;
+
+}
+.head-logo{
+  margin-left: 0px;
 }
 .header-item a {
   text-decoration: none;
   width: 40px;
-  height: 44px;
+  height: 50px;
   color: #fff;
   padding: 0 10px;
-  line-height: 44px;
+  line-height: 50px;
   text-align: center;
-  font-size: 13px;
+  font-size: 16px;
 }
 .header-item :hover {
-  opacity: 0.65;
+  opacity: 0.85;
+  color:rgba(89, 201, 37, 0.967)
 }
-.head-apple {
+
+.head-tea {
   margin-left: 0;
   width: 40px;
 }
 .icon-iconfontapple {
   font-size: 19px;
 }
-.head-mac {
+.head-peipi {
   width: 48px;
 }
-.head-ipad {
-  width: 46.98px;
+.head-models {
+  width: 56.98px;
 }
-.head-iphone {
+.head-i {
   width: 64px;
 }
-.head-watch {
+.head-news {
   width: 59.98px;
 }
-.head-music {
-  width: 57px;
+.head-mu {
+  width: 90px;
 }
 .head-support {
   width: 65.98px;
@@ -256,7 +287,6 @@ export default {
 .icon-bag-copy {
   font-size: 6px;
 }
-/* 购物袋的样式 */
 .bagview {
   width: 288px;
   height: 309px;
@@ -334,6 +364,15 @@ export default {
 }
 .bagview-nav-link:hover {
   text-decoration: underline;
+}
+.head-registered{
+    margin: 0 ;
+    height: 20px;
+    line-height: 20px;
+    
+}
+.head-xi{
+    margin-left: 120px;
 }
 </style>
 
