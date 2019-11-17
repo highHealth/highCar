@@ -5,6 +5,7 @@ import Ctype from '@/components/pages/Ctype'
 import News from '@/components/pages/News'
 import Support from '@/components/pages/Support.vue'
 import Map from '@/components/pages/Map.vue'
+import login from '@/components/pages/login/Login.vue'
 import js from '@/components/pages/Jieshao.vue'
 import data from '@/components/pages/Detailed.vue'
 
@@ -47,6 +48,11 @@ export default new Router({
       path:'/data/:carid',
       name: 'data',
       component:data
+    },
+    {
+      path:'/login',
+      name: 'login',
+      component:login
     }
   ]
 })

@@ -40,15 +40,7 @@
           <li class="section-item">商务选购</li>
         </ul> -->
       </div>
-      <div class="section">
-        <!-- <div class="section-label">
-          <h3 class="section-title">账户</h3>
-        </div> -->
-        <!-- <ul class="section-list">
-          <li class="section-item">管理你的 Apple ID</li>
-          <li class="section-item">Apple Store 账户</li>
-          <li class="section-item">iCloud.com</li>
-        </ul> -->
+      <!-- <div class="section">
         <div class="section-label">
           <h3 class="section-title">品牌价值观</h3>
         </div>
@@ -57,7 +49,7 @@
           <li class="section-item">安全</li>
           <li class="section-item">社会责任</li>
         </ul>
-      </div>
+      </div> -->
       <div class="section">
         <div class="section-label">
           <h3 class="section-title">关于品牌</h3>
@@ -85,7 +77,9 @@ export default {
   font-family: "SF Pro SC", "HanHei SC", "SF Pro Text", "Myriad Set Pro",
     "SF Pro Icons", "Apple Legacy Chevron", "PingFang SC", "Helvetica Neue",
     "Helvetica", "Arial", sans-serif;
-  font-size: 10px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #262626;
   padding: 0;
   margin: 0;
 }
@@ -112,7 +106,7 @@ export default {
   font-family: "SF Pro SC", "HanHei SC", "SF Pro Text", "Myriad Set Pro",
     "SF Pro Icons", "Apple Legacy Chevron", "PingFang SC", "Helvetica Neue",
     "Helvetica", "Arial", sans-serif;
-  font-size: 10px;
+  font-size: 18px;
   margin: 0;
   font-weight: 600;
   letter-spacing: 0.005em;

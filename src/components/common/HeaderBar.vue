@@ -21,36 +21,11 @@
             <router-link to="/mu">关于我们</router-link>
           </li>
           <li class="header-item head-registered head-xi" >
-            <router-link to="" style="font-size:12px;">登陆</router-link>
+            <router-link to="/login" style="font-size:12px;">登陆</router-link>
           </li>
           <li class="header-item head-registered">
             <router-link to="" style="font-size:12px;">注册</router-link>
           </li>
-          <!-- <li class="header-item head-mu">
-            <router-link to="/mu"></router-link>
-          </li> 
-          <li class="header-item head-i">
-            <router-link to=""></router-link>
-          </li>
-          <li class="header-item head-tea">
-            <router-link to="/">
-              <i class="icon iconfont icon-iconfontapple"></i>
-
-            </router-link>
-          </li>
-          <li class="header-item head-peipi">
-            <router-link to=""></router-link>
-          </li> 
-          <li class="header-item head-search">
-            <router-link to="">
-              <i class="icon iconfont icon-fangdajing"></i>
-            </router-link>
-          </li>
-          <li class="header-item head-bag" >
-            <router-link to="">
-              <i class="icon iconfont icon-bag-copy"></i>
-            </router-link>
-          </li> -->
 		    </ul>
         
       </div>
@@ -104,7 +79,6 @@ export default {
   data(){
     return{
       seen:false,
-      imgLogo:require("../../../src/assets/logo3.jpg"),
       imghigh:require("../../../src/assets/icon/high_icon.png"),
       imgrun:require("../../../src/assets/icon/run_icon.jpg"),
       imgsuv:require("../../../src/assets/icon/suv_icon.png"),

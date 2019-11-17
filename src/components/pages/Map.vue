@@ -28,7 +28,7 @@ export default {
   created: function() {
     axios
       .get(
-        "/xincheng/xincheng/test"
+        "/api/xincheng/xincheng/test"
       )
       .then(function(res){
         var cc = res.data;

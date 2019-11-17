@@ -2,23 +2,14 @@
   <div class="down">
     <div class="section-footer">
       <div class="section-shop">
-        更多选购方式：前往 <span class="nowrap">XXXX零售店</span>
-        ，致电 400-XXX-8080 或查找在你附近的<span class="nowrap">经销商</span>
       </div>
       <div class="section-legal">
-        <div class="section-legal-copyright">Copyright &copy; 2019 XXXX Inc. 保留所有权利。</div>
-        <div class="section-legal-links">
-          <div class="section-legal-link">隐私政策</div>
-          <div class="section-legal-link">使用条款</div>
-          <div class="section-legal-link">销售政策</div>
-          <div class="section-legal-link">法律信息</div>
-          <div class="section-legal-link">网站地图</div>
-        </div>
-        <div class="section-legal-locale">
+        <div class="section-legal-copyright">Copyright &copy; XXXX</div>
+        <!-- <div class="section-legal-locale">
           <img src="https://images.apple.com/ac/flags/1/images/zh-cn/16.png"> 中国
-        </div>
+        </div> -->
       </div>
-      <p class="section-bottom">京公安网安备 11XXXXXXXXXXX 京ICP备XXXXXXXX</p>
+      <p class="section-bottom"></p>
     </div>
     
   </div>
@@ -60,10 +51,10 @@ export default {};
   top: -3px;
 }
 .section-legal-copyright {
-  float: left;
   margin-top: 3px;
-  margin-right: 30px;
+  margin-left: 420px;
   color: #999;
+  font-size:16px;
 }
 .section-legal-links {
   margin-right: 30px;
