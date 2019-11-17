@@ -6,11 +6,12 @@ import News from '@/components/pages/News'
 import Support from '@/components/pages/Support.vue'
 import Map from '@/components/pages/Map.vue'
 import js from '@/components/pages/Jieshao.vue'
+import data from '@/components/pages/Detailed.vue'
 
 Vue.use(Router)
 
 export default new Router({
-  // mode: 'history',
+  mode: 'history',
   routes: [
     {
       path: '/',
@@ -41,6 +42,11 @@ export default new Router({
       path: '/js/:name',
       name: 'js',
       component: js
+    },
+    {
+      path:'/data/:carid',
+      name: 'data',
+      component:data
     }
   ]
 })
