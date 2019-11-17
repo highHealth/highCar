@@ -3,10 +3,8 @@
     <div class="content">
       <div class="headbar">
         <ul class="header-list">
-          <li class="header-item head-logo">
-            <router-link to="/" >
-                <img :src="imgLogo" class="logo" />
-            </router-link>
+          <li class="header-item head-models">
+            <router-link to="/" >首页</router-link>
           </li>
           <li class="header-item head-models">
             <router-link to="/type" @mouseenter.native="on" >车型</router-link>
@@ -23,7 +21,7 @@
             <router-link to="/mu">关于我们</router-link>
           </li>
           <li class="header-item head-registered head-xi" >
-            <router-link to="/login" style="font-size:12px;">登陆</router-link>
+            <router-link to="" style="font-size:12px;">登陆</router-link>
           </li>
           <li class="header-item head-registered">
             <router-link to="" style="font-size:12px;">注册</router-link>
