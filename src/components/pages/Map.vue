@@ -25,6 +25,19 @@ export default {
     footerInfo,
     headerBar,
   },
+  created: function() {
+    axios
+      .get(
+        "/xincheng/xincheng/test"
+      )
+      .then(function(res){
+        var cc = res.data;
+        alert(cc)
+     })
+      .catch(error => {
+        alert("网络错误不能访问");
+      });
+  },
   mounted(){
     this.drawLine();
   },

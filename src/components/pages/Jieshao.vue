@@ -10,6 +10,7 @@
             <h5>{{v.name}}</h5>
             <img :src='v.img' />
             <p>价格：{{v.money}}¥</p>
+            <button class="" @click="xq(v.id)">查看详情</button>
         </div>
 
     </div>
@@ -28,12 +29,14 @@ export default {
       tetil:'',
       car:[
         {
+          id:'',
           name:'',
           img:'',
           money:''
         }
         ],
         mcar:{
+          id:'',
           name:'',
           img:'',
           money:''
@@ -65,16 +68,19 @@ export default {
       if(this.tetil==='豪华车型'){
         this.car = [
         {
+          id:3,
           name:'H2',
           img:require('../../../src/assets/js/H2.png'),
           money:'100,000'
         },
         {
+          id:4,
           name:'H6',
           img:require('../../../src/assets/js/H6.png'),
           money:'200,000'
         },
         {
+          id:5,
           name:'H8',
           img:require('../../../src/assets/js/H8.png'),
           money:'300,000'
@@ -141,6 +147,10 @@ export default {
         this.car.length = 0;
         alert('此车型尚未开发')
       }
+    },
+    xq(index){
+      var url = '/data/' + index
+      this.$router.push(url)
     }
   }
   };
