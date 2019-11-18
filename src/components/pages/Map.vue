@@ -35,7 +35,7 @@ export default {
         alert(cc)
      })
       .catch(error => {
-        alert("网络错误不能访问");
+        //alert("网络错误不能访问");
       });
   },
   mounted(){
@@ -88,12 +88,17 @@ export default {
                         fontSize:16,
                         fontFamily:'幼圆',
                     },
-                    backgroundColor:'rgba(0,0,0,0.2)',
-                    borderColor:'#3890D8',
+                    backgroundColor: 'rgba(20,20,20,0.2)',
+                    color: 'black',
+                    borderWidth: '1',
+                    borderColor: '#000',
+                    textStyle: {
+                        color: 'white',
+                    },
                     formatter: function (params) {
                         let name = params.name
                         let leadName = name.substring(0,2);
-                        return '<h1>'+leadName +'</h1><br/>'+params.name  + '<br/>电话：' + params.value[2]  ;
+                        return '<h1 style="color:#000;">'+leadName +'</h1><br/>'+params.name  + '<br/>电话：' + params.value[2]  ;
                     }
                 },
                 legend: {
@@ -109,7 +114,8 @@ export default {
                     map: 'china',
                     label: {
                         emphasis: {
-                            show: false
+                            fontSize:16,
+                            color: '#000'
                         }
                     },
                     roam: true,
@@ -140,7 +146,18 @@ export default {
                         {name: "湖南桂花坪街道雀园路369号，长沙，湖南，410000",value:13333333333, symbolSize: 15},
                         {name: "上海市浦东新区锦绣东路2053号，上海，200000",value:13333333333, symbolSize: 15},
                         {name: "大庆市高新区新兴东街8号，大庆，163000",value:13333333333, symbolSize: 15},
-                    ])
+                    ]),
+                    itemStyle: {
+                        normal: {
+                            color: function(e){
+                                return '#B7DBD9'
+                            }
+                        },
+                        emphasis: {
+                            borderColor: '#fff',
+                            borderWidth: 1
+                        }
+                    }
                 }]
             };
             if (option && typeof option === "object") {
