@@ -3,12 +3,12 @@ import Router from 'vue-router'
 import Home from '@/components/pages/Home'
 import Ctype from '@/components/pages/Ctype'
 import News from '@/components/pages/News'
-import Support from '@/components/pages/Support.vue'
+import Support from '@/components/pages/Map.vue'
 import Map from '@/components/pages/Map.vue'
 import login from '@/components/pages/login/Login.vue'
 import js from '@/components/pages/Jieshao.vue'
 import data from '@/components/pages/Detailed.vue'
-
+import mu from '@/components/pages/Mu.vue'
 Vue.use(Router)
 
 export default new Router({
@@ -48,6 +48,11 @@ export default new Router({
       path:'/data/:carid',
       name: 'data',
       component:data
+    },
+    {
+      path:'/mu',
+      name: 'mu',
+      component:mu
     },
     {
       path:'/login',

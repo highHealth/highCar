@@ -159,7 +159,7 @@ export default {
   height: 1000px;
   width: 1300px;
   margin:0 auto;
-  background-color: rgb(255, 255, 255);
+  background-color: rgb(179, 177, 177);
 }
 .left{
   height: 920px;
