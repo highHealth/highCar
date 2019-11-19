@@ -10,7 +10,8 @@
             <h5>{{v.name}}</h5>
             <img :src='v.img' />
             <p>价格：{{v.money}}¥</p>
-            <button class="" @click="xq(v.id)">查看详情</button>
+            <!-- <button class="butt" @click="xq(v.id)">查看详情</button> -->
+            <el-button type="text" @click="xq(v.id)">查看详情</el-button>
         </div>
 
     </div>
@@ -181,5 +182,8 @@ export default {
     border-color: red;  */
     margin-left: 15px;
     float: left;
+}
+.butt{
+
 }
 </style>
