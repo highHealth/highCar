@@ -1,13 +1,20 @@
 <template>
   <div>
     <header-bar></header-bar>
-    <div>
-         <h5>{{this.cardata.name}}</h5>
-            <img :src= this.timg />
-            <p>价格：{{this.cardata.money}}¥</p>
+    <div class="section">
+        <div>
+          <h2>{{this.cardata.name}}</h2>
+          <h3>售价：{{this.cardata.money}}¥</h3>
+          <div>
             <p>{{this.cardata.location}}</p>
-    </div>
-    <button class @click="fh">返回</button>
+          </div>
+          <div>
+            <img :src= this.timg />
+          </div>
+          <el-button icon="el-icon-back" @click="fh">返回车型页</el-button>
+        </div>
+      </div>
+          
     <footer-info></footer-info>
   </div>
 </template>
@@ -37,12 +44,11 @@ export default {
     this.cardata = {
       id: 8,
       name: "GT5",
-      type: "sprot",
+      type: "sport",
       money: "350,000",
-      img:'../../../src/assets/js/GT5.jpg',
       location: "此处为介绍，可以说一下配置参数。吹就完事了。"
     };
-    // this.timg =require(this.cardata.img)
+    this.timg =require("../../../src/assets/datu/"+this.cardata.name+".jpg")
     this.upadd = "/js/" + this.cardata.type;
   },
   methods: {
@@ -53,4 +59,15 @@ export default {
 };
 </script>
 <style scoped>
+.section {
+  position: relative;
+  margin-top: 50px;
+  background: #fafafa;
+  width: 1350px;
+  padding-top: 68px;
+  height: 800px;
+  color: #333;
+  margin: auto;
+  text-align: center;
+}
 </style>
