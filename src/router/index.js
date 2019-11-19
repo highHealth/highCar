@@ -6,6 +6,7 @@ import News from '@/components/pages/News'
 import Support from '@/components/pages/Map.vue'
 import Map from '@/components/pages/Map.vue'
 import login from '@/components/pages/login/Login.vue'
+import demo1 from '@/components/pages/Demo1.vue'
 import js from '@/components/pages/Jieshao.vue'
 import data from '@/components/pages/Detailed.vue'
 import mu from '@/components/pages/Mu.vue'
@@ -58,6 +59,11 @@ export default new Router({
       path:'/login',
       name: 'login',
       component:login
+    },
+    {
+      path:'/demo1',
+      name: 'demo1',
+      component:demo1
     }
   ]
 })

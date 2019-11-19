@@ -20,7 +20,8 @@
     "vue-baidu-map": "^0.21.22",
     "vue-easy-slider": "^5.3.2",
     "vue-router": "^3.0.1",
-    "vue-slider-component": "^3.0.42"
+    "vue-slider-component": "^3.0.42",
+    "vue-video-player": "^5.0.2"
   },
   "devDependencies": {
     "autoprefixer": "^7.1.2",

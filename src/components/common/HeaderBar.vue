@@ -24,7 +24,7 @@
             <router-link to="/login" style="font-size:12px;">登陆</router-link>
           </li>
           <li class="header-item head-registered">
-            <router-link to="" style="font-size:12px;">注册</router-link>
+            <router-link to="/demo1" style="font-size:12px;">注册</router-link>
           </li>
 		    </ul>
         

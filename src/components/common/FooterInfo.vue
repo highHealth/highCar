@@ -26,36 +26,30 @@
       </div>
       <div class="section">
         <div class="section-label">
+          <h3 class="section-title">关于品牌</h3>
+        </div>
+        <ul class="section-list">
+          <li class="section-item">品牌介绍</li>
+        </ul>
+      </div>
+      <div class="section">
+        <div class="section-label">
           <h3 class="section-title">售后</h3>
         </div>
         <ul class="section-list">
           <li class="section-item">全国售后维修</li>
           <li class="section-item">保险及赔偿</li>
         </ul>
-        <!-- <div class="section-label section-second">
-          <h3 class="section-title">商务应用</h3>
-        </div> -->
-        <!-- <ul class="section-list">
-          <li class="section-item">Apple 与商务</li>
-          <li class="section-item">商务选购</li>
-        </ul> -->
       </div>
-      <!-- <div class="section">
-        <div class="section-label">
-          <h3 class="section-title">品牌价值观</h3>
-        </div>
-        <ul class="section-list">
-          <li class="section-item">环境责任</li>
-          <li class="section-item">安全</li>
-          <li class="section-item">社会责任</li>
-        </ul>
-      </div> -->
       <div class="section">
         <div class="section-label">
-          <h3 class="section-title">关于品牌</h3>
+          <h3 class="section-title">官方社交媒体</h3>
         </div>
         <ul class="section-list">
-          <li class="section-item">品牌介绍</li>
+          <li class="section-item">官方微博</li>
+        </ul>
+        <ul class="section-list">
+          <li class="section-item">官方微信</li>
         </ul>
       </div>
     </div>
