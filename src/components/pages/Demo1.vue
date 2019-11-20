@@ -3,7 +3,7 @@
     <header-bar>
     </header-bar>
     <div id="myChart" style="width:100%;height:600px">
-        <video-player  class="video-player-box"
+        <video-player  class="video-player-box video-js vjs-big-play-centered"
                  ref="videoPlayer"
                  :options="playerOptions"
                  :playsinline="true"
@@ -43,12 +43,22 @@ export default {
           // videojs options
           muted: true,
           language: 'en',
+          height:400,
+          width:600,
+          //fluid: true,
           playbackRates: [0.7, 1.0, 1.5, 2.0],
           sources: [{
             type: "video/mp4",
-            src: "https://cdn.theguardian.tv/webM/2015/07/20/150716YesMen_synd_768k_vp8.webm"
+            src: "https://www.17sucai.com/preview/501914/2017-08-04/%E9%A1%B5%E9%9D%A2/media/mov_bbb.mp4"
+            //src: "https://cdn.theguardian.tv/webM/2015/07/20/150716YesMen_synd_768k_vp8.webm"
           }],
           poster: "/static/images/author.jpg",
+          controlBar:{
+            'currentTimeDisplay':true,
+            'timeDivider':true,
+            'durationDisplay':true,
+            'remainingTimeDisplay':false
+          }
         }
     };
   },
@@ -102,6 +112,7 @@ export default {
     }
   }
 </script>
+
 
 
 
