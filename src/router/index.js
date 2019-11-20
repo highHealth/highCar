@@ -10,6 +10,8 @@ import demo1 from '@/components/pages/Demo1.vue'
 import js from '@/components/pages/Jieshao.vue'
 import data from '@/components/pages/Detailed.vue'
 import mu from '@/components/pages/Mu.vue'
+import nd from '@/components/pages/NData.vue'
+
 Vue.use(Router)
 
 export default new Router({
@@ -49,6 +51,11 @@ export default new Router({
       path:'/data/:carid',
       name: 'data',
       component:data
+    },
+    {
+      path:'/nd/:newsid',
+      name: 'nd',
+      component:nd
     },
     {
       path:'/mu',

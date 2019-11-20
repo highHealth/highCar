@@ -105,7 +105,7 @@ export default {
       rdata:[
         {
           id:'1',
-          title:'法兰克福车展本品牌惊艳亮相',
+          title:'洛杉矶车展本品牌惊艳亮相',
           writer:'王小二',
           time:'11-15'
         },
@@ -150,6 +150,8 @@ export default {
   methods: {
     kk(index){
       console.log(index.id)
+      var url = '/nd/'+index.id
+      this.$router.push(url)
     }
   }
 };
