@@ -183,7 +183,5 @@ export default {
     margin-left: 15px;
     float: left;
 }
-.butt{
 
-}
 </style>

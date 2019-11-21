@@ -77,56 +77,10 @@ export default {
       headbar: [],
       body: {},
       ldata:[
-        {
-          id:'1',
-          title:'法兰克福车展本品牌惊艳亮相',
-          writer:'王小二',
-          time:'11-15'
-        },
-        {
-          id:'2',
-          title:'自主知识产权新车下线',
-          writer:'王小二',
-          time:'11-14'
-        },
-        {
-          id:'3',
-          title:'世界最先进生产线落户工场',
-          writer:'李木子',
-          time:'11-13'
-        },
-        {
-          id:'4',
-          title:'严抓质量，品质为先',
-          writer:'马右',
-          time:'11-12'
-        },
+
       ],
       rdata:[
-        {
-          id:'1',
-          title:'洛杉矶车展本品牌惊艳亮相',
-          writer:'王小二',
-          time:'11-15'
-        },
-        {
-          id:'2',
-          title:'自主知识产权新车下线',
-          writer:'王小二',
-          time:'11-14'
-        },
-        {
-          id:'3',
-          title:'世界最先进生产线落户工场',
-          writer:'李木子',
-          time:'11-13'
-        },
-        {
-          id:'4',
-          title:'严抓质量，品质为先',
-          writer:'马右',
-          time:'11-12'
-        },
+        
       ],
     };
   },
@@ -135,17 +89,38 @@ export default {
     footerInfo
   },
   mounted: function() {
-    // axios
-    //   .get(
-    //     "https://www.easy-mock.com/mock/5a67ef8cbdf9f5437bb4979a/Data/musicData"
-    //   )
-    //   .then(response => {
-    //     this.headbar = response.data.headbar;
-    //     this.body = response.data.body;
-    //   })
-    //   .catch(error => {
-    //     alert("网络错误不能访问");
-    //   });
+    this.$axios
+      .get(
+        "api/news/title",{
+          params:{
+            type:1
+          }
+        }
+      )
+      .then(response => {
+        for(var i =0;i<response.data.length;i++){
+          this.ldata.push(response.data[i])
+        }
+      })
+      .catch(error => {
+        alert("网络错误不能访问");
+      });
+      this.$axios
+      .get(
+        "api/news/title",{
+          params:{
+            type:2
+          }
+        }
+      )
+      .then(response => {
+        for(var i =0;i<response.data.length;i++){
+          this.rdata.push(response.data[i])
+        }
+      })
+      .catch(error => {
+        alert("网络错误不能访问");
+      });
   },
   methods: {
     kk(index){
