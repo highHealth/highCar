@@ -2,19 +2,18 @@
   <div>
     <header-bar></header-bar>
     <div class="section">
+      <div>
+        <h2>{{this.cardata.name}}</h2>
+        <h3>售价：{{this.cardata.money}}¥</h3>
         <div>
-          <h2>{{this.cardata.name}}</h2>
-          <h3>售价：{{this.cardata.money}}¥</h3>
-          <div>
-            <p>{{this.cardata.location}}</p>
-          </div>
-          <div>
-            <img :src= this.timg />
-          </div>
-          <el-button icon="el-icon-back" @click="fh">返回车型页</el-button>
+          <p>{{this.cardata.location}}</p>
         </div>
+        <div>
+          <img :src="this.timg" />
+        </div>
+        <el-button icon="el-icon-back" @click="fh">返回车型页</el-button>
       </div>
-          
+    </div>
     <footer-info></footer-info>
   </div>
 </template>
@@ -25,13 +24,7 @@ import headerBar from "@/components/common/HeaderBar";
 export default {
   data() {
     return {
-      cardata: {
-        id: "",
-        name: "",
-        type: "",
-        money: "",
-        location: ""
-      }
+      cardata: {}
     };
   },
   components: {
@@ -41,15 +34,20 @@ export default {
   mounted: function() {
     //通过id查找数据库返回具体的车型数据
     //response.data = this.cardata
-    this.cardata = {
-      id: 8,
-      name: "GT5",
-      type: "sport",
-      money: "350,000",
-      location: "此处为介绍，可以说一下配置参数。吹就完事了。"
-    };
-    this.timg =require("../../../src/assets/datu/"+this.cardata.name+".jpg")
-    this.upadd = "/js/" + this.cardata.type;
+    this.$axios
+      .get("/api/car/id", {
+        params: {
+          id: this.$route.params.carid
+        }
+      })
+      .then(response => {
+        this.cardata = response.data;
+        this.timg = require("../../../src/assets/datu/" +
+          this.cardata.img +
+          ".jpg");
+        this.upadd = "/js/" + this.cardata.mark;
+        console.log(this.upadd);
+      });
   },
   methods: {
     fh() {

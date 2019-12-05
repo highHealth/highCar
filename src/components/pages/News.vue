@@ -2,7 +2,7 @@
   <div class="body">
     <header-bar></header-bar>
    <div class="content">
-     <div class="left"> 
+     <div class="left">
   <template>
   <h2 class="hh">品牌新闻</h2>
   <el-table @cell-click="kk"
@@ -27,10 +27,6 @@
       width="130%">
     </el-table-column>
   </el-table>
-<!--   <div style="margin-top: 20px">
-    <el-button @click="setCurrent(tableData[1])">选中第二行</el-button>
-    <el-button @click="setCurrent()">取消选择</el-button>
-  </div> -->
 </template>
      </div>
      <div class="right">
@@ -58,10 +54,6 @@
       width="130%">
     </el-table-column>
   </el-table>
-<!--   <div style="margin-top: 20px">
-    <el-button @click="setCurrent(tableData[1])">选中第二行</el-button>
-    <el-button @click="setCurrent()">取消选择</el-button>
-  </div> -->
 </template>
      </div>
     </div>
@@ -80,7 +72,6 @@ export default {
 
       ],
       rdata:[
-        
       ],
     };
   },
