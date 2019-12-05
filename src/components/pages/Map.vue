@@ -18,7 +18,8 @@ export default {
     return {
       list: [],
       prolists: [],
-      body: {}
+      body: {},
+      geoCoordMap:{},
     };
   },
   components: {
@@ -28,9 +29,10 @@ export default {
   created: function() {
     axios
       .get(
-        "/api/xincheng/xincheng/test"
+        "api/dealers/showMap"
       )
       .then(function(res){
+          alert("XIXI")
         var cc = res.data;
         alert(cc)
      })
@@ -138,6 +140,7 @@ export default {
                 },
                 series: [{
                     name: '大中华地区经销商查询',
+                    symbol:"image://https://cool-1300620271.cos.ap-beijing.myqcloud.com/Camaro_car_24px_501914_easyicon.net.png",
                     type: 'scatter',
                     coordinateSystem: 'geo',
                     data: convertData([
@@ -168,6 +171,7 @@ export default {
                             },
                             {
                                 name: '大中华地区售后查询',
+                                symbol:"image://https://cool-1300620271.cos.ap-beijing.myqcloud.com/Crowler_car_24px_501916_easyicon.net.png",
                                 type: 'scatter',
                                 coordinateSystem: 'geo',
                                 data: convertData([
