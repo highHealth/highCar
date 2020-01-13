@@ -1,8 +1,6 @@
 <template>
   <div class="body">
     <header-bar></header-bar>
-    <md-card>
-      <md-card-media>
         <!-- swiper -->
         <swiper :options="swiperOption">
           <!-- slides -->
@@ -15,9 +13,6 @@
           <div class="swiper-button-prev" slot="button-prev"></div>
           <div class="swiper-button-next" slot="button-next"></div>
         </swiper>
-      </md-card-media>
-    </md-card>
-
     <div class="foot">
       <ul class="ads">
         <div class="ads-0" >
