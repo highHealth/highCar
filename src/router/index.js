@@ -4,13 +4,17 @@ import Home from '@/components/pages/Home'
 import Ctype from '@/components/pages/Ctype'
 import News from '@/components/pages/News'
 import Support from '@/components/pages/Map.vue'
-import Map from '@/components/pages/Map.vue'
+import Map from '@/components/pages/Map.vue'   // 售后和地图页
 import login from '@/components/pages/login/Login.vue'
 import demo1 from '@/components/pages/Demo1.vue'
 import js from '@/components/pages/Jieshao.vue'
 import data from '@/components/pages/Detailed.vue'
 import mu from '@/components/pages/Mu.vue'
 import nd from '@/components/pages/NData.vue'
+import OfficialWX from '@/components/pages/OfficialWX.vue'  // 官方微信
+import BrandStory from '@/components/pages/BrandStory.vue'  // 品牌文化
+import Login from '@/components/pages/login/Login.vue'      // 登陆
+import Registr from '@/components/pages/login/Registr.vue'  // 注册
 
 Vue.use(Router)
 
@@ -64,13 +68,29 @@ export default new Router({
     },
     {
       path:'/login',
-      name: 'login',
-      component:login
+      name: 'Login',
+      component:Login
+    },
+    {
+      path:'/registr',
+      name: 'Registr',
+      component:Registr
     },
     {
       path:'/demo1',
       name: 'demo1',
       component:demo1
-    }
+    },
+    {
+      path:'/officialWX',
+      name: 'OfficialWX',
+      component:OfficialWX
+    },
+    {
+      path:'/brandStory',
+      name: 'BrandStory',
+      component:BrandStory
+    },
+    
   ]
 })

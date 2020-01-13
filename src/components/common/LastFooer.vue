@@ -4,7 +4,7 @@
       <div class="section-shop">
       </div>
       <div class="section-legal">
-        <div class="section-legal-copyright">Copyright &copy; XXXX</div>
+        <div class="section-legal-copyright">Copyright &copy; 范雨蒙</div>
         <!-- <div class="section-legal-locale">
           <img src="https://images.apple.com/ac/flags/1/images/zh-cn/16.png"> 中国
         </div> -->
