@@ -150,29 +150,15 @@ export default {
             ]
     };
   },
-  // mounted: function() {
-  //   axios
-  //     .get(
-  //       "https://www.easy-mock.com/mock/5a67ef8cbdf9f5437bb4979a/Data/homedata"
-  //     )
-  //     .then(response => {
-  //       this.major = response.data.major;
-  //       this.ads = response.data.ads;
-  //     })
-  //     .catch(error => {
-  //       alert("网络错误不能访问");
-  //     });
-  // },
   computed: {
       swiper() {
-        return this.$refs.mySwiper.swiper
+        //return this.$refs.mySwiper.swiper
       }
     },
     mounted() {
-      // current swiper instance
       // 然后你就可以使用当前上下文内的swiper对象去做你想做的事了
       console.log('this is current swiper instance object', this.swiper)
-      this.swiper.slideTo(3, 1000, false)
+      //this.swiper.slideTo(3, 1000, false)
     },
   components: {
     footerInfo,

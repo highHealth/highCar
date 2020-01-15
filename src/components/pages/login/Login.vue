@@ -1,7 +1,6 @@
 <template>
   <body>
     <header-bar></header-bar>
-    <children ref="child"></children>
     <div class="container">
       <el-card>
         <div class="head">
@@ -85,7 +84,7 @@ export default {
                 setCookie.getInfo(self.username, self.password);
                 setCookie.rememberPass();
                 this.$message("登陆成功");
-                this.$refs.headerBar.showName = false;
+                //this.$refs.headerBar.showName = false;
                 this.$router.push({ name: "Home" });
                 //localStorage.setItem('token',res.data.token);
                 //this.handleUsername()

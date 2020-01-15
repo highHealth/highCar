@@ -1,5 +1,6 @@
 <template>
-  <div v-on:click="showBag">
+  <!-- <div v-on:click="showBag"> -->
+  <div>
     <div class="content">
       <div class="headbar">
         <ul class="header-list">
@@ -50,17 +51,10 @@
       </div>
     <!-- <div class="bagview" id="bag">
       <div class="bag-content">
-        <p class="bag-message-empty">你的购物袋是空的</p>
         <nav class="bagview-nav">
           <ul class="bagview-nav-list">
             <li class="bagview-nav-item">
-              <a href="" class="bagview-nav-link">购物袋</a>
-            </li>
-            <li class="bagview-nav-item">
               <a href="" class="bagview-nav-link">收藏</a>
-            </li>
-            <li class="bagview-nav-item">
-              <a href="" class="bagview-nav-link">订单</a>
             </li>
             <li class="bagview-nav-item">
               <a href="" class="bagview-nav-link">账户</a>
@@ -166,7 +160,7 @@ export default {
 }
 .content {
   width: 100%;
-  height: 108px;
+  height: 98px;
   background: rgba(0, 0, 0, 0.8);
   padding-top:10px 
 }
@@ -190,7 +184,7 @@ export default {
   color: white;
   font-size: 16px;
   font-weight: 100;
-  margin-top:40px;
+  margin-top:30px;
 }
 .header-item {
   height: 50px;

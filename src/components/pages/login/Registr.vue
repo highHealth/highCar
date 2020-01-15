@@ -40,9 +40,6 @@ export default {
               password:'',
               password2:'',
           },
-          components: {
-            headerBar
-          },
           rules:{
               username:[
                   {required:true,trigger:'blur',validator:(rule,value,callback)=>{
@@ -79,6 +76,9 @@ export default {
           }
       }
       },
+      components: {
+            headerBar
+        },
       methods:{
           submit(){
               this.$refs['form'].validate((valid)=>{
@@ -123,6 +123,7 @@ export default {
     left: 0;
     right: 0;
     bottom: 0;
+    margin-top: 120px;
   }
   .head {
     display: flex;
