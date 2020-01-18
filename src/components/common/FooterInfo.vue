@@ -29,7 +29,7 @@
           <h3 class="section-title">关于品牌</h3>
         </div>
         <ul class="section-list">
-          <li class="section-item">品牌介绍</li>
+          <router-link to="/brandStory" class="section-item">品牌文化</router-link>
         </ul>
       </div>
       <div class="section">
@@ -46,10 +46,14 @@
           <h3 class="section-title">官方社交媒体</h3>
         </div>
         <ul class="section-list">
-          <li class="section-item">官方微博</li>
+          <li>
+            <a class="section-item" href="https://weibo.com/landroverchina?profile_ftype=1&is_all=1#_0" target="officalWeibo" >官方微博</a> 
+          </li>
         </ul>
         <ul class="section-list">
-          <li class="section-item">官方微信</li>
+          <li class="section-item">
+            <router-link to="/officialWX" class="section-item">官方微信</router-link>
+          </li>
         </ul>
       </div>
     </div>
@@ -61,7 +65,7 @@ import lastFooter from "@/components/common/LastFooer";
 export default {
   components: {
     lastFooter
-  }
+  },
 };
 </script>
 <style scoped>
@@ -115,13 +119,14 @@ export default {
 .section-item {
   color: #888;
   margin-bottom: 6px;
+  text-align: -webkit-match-parent;
+  text-decoration: none;
 }
 .section-item:hover {
   cursor: pointer;
   text-decoration: underline;
   color: black;
   text-decoration-color: black;
-  
 }
 .section-second {
   padding-top: 24px;

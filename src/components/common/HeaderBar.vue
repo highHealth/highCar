@@ -1,5 +1,6 @@
 <template>
-  <div v-on:click="showBag">
+  <!-- <div v-on:click="showBag"> -->
+  <div>
     <div class="content">
       <div class="headbar">
         <ul class="header-list">
@@ -9,23 +10,23 @@
           <li class="header-item head-models">
             <router-link to="/type" @mouseenter.native="on" >车型</router-link>
           </li>
-
           <li class="header-item head-watch">
             <router-link to="/News">新闻</router-link>
           </li>
-
           <li class="header-item head-watch">
             <router-link to="/support">售后</router-link>
           </li>
           <li class="header-item head-mu">
             <router-link to="/mu">关于我们</router-link>
           </li>
-          <li class="header-item head-registered head-xi" >
-            <router-link to="/login" style="font-size:12px;">登陆</router-link>
-          </li>
-          <li class="header-item head-registered">
-            <router-link to="/demo1" style="font-size:12px;">注册</router-link>
-          </li>
+          <span v-show="showName" index="99">
+            <li class="header-item head-registered head-xi" >
+              <router-link to="/login" style="font-size:12px;">登陆</router-link>
+            </li>
+            <li class="header-item head-registered">
+              <router-link to="/Registr" style="font-size:12px;">注册</router-link>
+            </li>
+          </span>
 		    </ul>
         
       </div>
@@ -48,19 +49,12 @@
         <img :src="imge" class="cimg"/><br/>
       </router-link>
       </div>
-    <div class="bagview" id="bag">
+    <!-- <div class="bagview" id="bag">
       <div class="bag-content">
-        <p class="bag-message-empty">你的购物袋是空的</p>
         <nav class="bagview-nav">
           <ul class="bagview-nav-list">
             <li class="bagview-nav-item">
-              <a href="" class="bagview-nav-link">购物袋</a>
-            </li>
-            <li class="bagview-nav-item">
               <a href="" class="bagview-nav-link">收藏</a>
-            </li>
-            <li class="bagview-nav-item">
-              <a href="" class="bagview-nav-link">订单</a>
             </li>
             <li class="bagview-nav-item">
               <a href="" class="bagview-nav-link">账户</a>
@@ -71,7 +65,7 @@
           </ul>
         </nav>
       </div>
-    </div>
+    </div> -->
   </div>
 </template>
 <script>
@@ -79,6 +73,7 @@ export default {
   data(){
     return{
       seen:false,
+      showName:true,
       imghigh:require("../../../src/assets/icon/high_icon.png"),
       imgrun:require("../../../src/assets/icon/run_icon.jpg"),
       imgsuv:require("../../../src/assets/icon/suv_icon.png"),
@@ -86,15 +81,15 @@ export default {
     }
   },
   methods: {
-    showBag(v) {
-      // console.log(v);
-      var bag = document.getElementById("bag");
-      if (v.target.className == "icon iconfont icon-bag-copy") {
-        bag.style.display = "block";
-      } else {
-        bag.style.display = "none";
-      }
-    },
+    // showBag(v) {
+    //   // console.log(v);
+    //   var bag = document.getElementById("bag");
+    //   if (v.target.className == "icon iconfont icon-bag-copy") {
+    //     bag.style.display = "block";
+    //   } else {
+    //     bag.style.display = "none";
+    //   }
+    // },
     on(){
       this.seen = true;
 
@@ -165,7 +160,7 @@ export default {
 }
 .content {
   width: 100%;
-  height: 108px;
+  height: 98px;
   background: rgba(0, 0, 0, 0.8);
   padding-top:10px 
 }
@@ -189,7 +184,7 @@ export default {
   color: white;
   font-size: 16px;
   font-weight: 100;
-  margin-top:40px;
+  margin-top:30px;
 }
 .header-item {
   height: 50px;

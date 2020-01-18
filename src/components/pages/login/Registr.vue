@@ -1,135 +1,146 @@
 <template>
-  <div id="logo">
-    <div class="login-box" style="margin-top:200px">
-      <!-- 通过:rules="loginFormRules"来绑定输入内容的校验规则 -->
-      <el-form :rules="registerFormRules" ref="registrForm" :model="registrUser" label-position="right" label-width="auto" show-message>
-        <span class="login-title" style="margin-left:-110px;font-size:30px">欢迎注册</span>
-
-        <div style="margin-top: 5px"></div>
-
-        <el-form-item label="用户名" prop="username" style="margin-left:500px;margin-top:30px;font-weight:bold">
-          <el-col :span="8" >
-            <el-input type="text" v-model="registrUser.userName" placeholder="输入用户名"></el-input>
-          </el-col>
-        </el-form-item>
-
-        <el-form-item label="密码" prop="password" style="margin-left:500px;font-weight:bold">
-          <el-col :span="8" >
-            <el-input type="password" v-model="registrUser.password" placeholder="输入密码"></el-input>
-          </el-col>
-        </el-form-item>
-
-        <el-form-item label="确认密码" prop="password2" style="margin-left:500px;font-weight:bold">
-          <el-col :span="8" >
-            <el-input type="password" v-model="registrUser.password2" placeholder="确认密码"></el-input>
-          </el-col>
-        </el-form-item>
-
-        <el-form-item label="手机号" prop="phone" style="margin-left:500px;font-weight:bold">
-          <el-col :span="8" >
-            <el-input type="text" v-model="registrUser.phone" placeholder="手机号"></el-input>
-          </el-col>
-        </el-form-item>
-
-        <el-form-item label="选择注册的身份" prop="phone" style="margin-left:500px;font-weight:bold">
-          <el-col :span="8" >
-            <el-select v-model="registrUser.roleId" placeholder="请选择身份">
-              <el-option label="管理员" value="2"></el-option>
-              <el-option label="普通用户" value="1"></el-option>
-            </el-select>
-          </el-col>
-        </el-form-item>
-
-
-        <el-form-item>
-          <el-button type="primary" @click="onRegit('registrForm')" style="margin-left:-280px">注册</el-button>
-        </el-form-item>
-      </el-form>
-    </div>
-  </div>
+    <body>
+        <header-bar></header-bar>
+        <div class="container">
+            <el-card>
+                <div class="head">
+                    <span>创建您的账户</span>
+                </div>
+                <el-form :model="form" :rules="rules" ref="form" label-width="100px" class="form">
+                    <el-form-item label="账号" prop="username">
+                        <el-input v-model="form.username" auto-complete="off"></el-input>
+                    </el-form-item>
+                    <el-form-item label="密码" prop="password">
+                        <el-input v-model="form.password" auto-complete="off" type="password"></el-input>
+                    </el-form-item>
+                    <el-form-item label="确认密码" prop="password2">
+                        <el-input v-model="form.password2" auto-complete="off" type="password"></el-input>
+                    </el-form-item>
+                    <el-form-item class="button-container">
+                        <el-button type="primary" :loading="regButtonLoading" @click="submit">注册</el-button>
+                        <el-button type="default" @click="backlogin">返回登陆</el-button>
+                    </el-form-item>
+                </el-form>
+            </el-card>
+        </div>
+    </body>
 </template>
 
 <script>
-    import { mapMutations } from 'vuex';
-    export default {
-        name: "login",
-        data () {
-            var validatePass2 =(rule,value,callback) =>{
-                if(value !==this.registrUser.password){
-                    callback(new Error("两次密码不一致"));
-                }else{
-                    callback();
-                }
-            };
-            return{
-                registrUser:{
-                    userName: '',
-                    password: '',
-                    password2: '',
-                    phone: '',
-                    roleId: '',
-                },
-                registerFormRules: {
-                    userName: [
-                        {required:true,message:"用户名不可以为空",trigger:"blur"},
-                        {min:2,max:30,message: "长度不在2-30之间",trigger:"blur"}
-                    ],
-                    password: [
-                        {required:true,message:"密码不可以为空",trigger:"blur"},
-                        {min:6,max:30,message: "长度不在6-30之间",trigger:"blur"}
-                    ],
-                    password2: [
-                        {required:true,message:"确认密码不可以为空",trigger:"blur"},
-                        {min:6,max:30,message: "长度不在6-30之间",trigger:"blur"},
-                        {validator:validatePass2,trigger:'blur'}
-                    ],
-                    phone: [
-                        {required: true,message:"格式不正确",trigger:"blur"},
-                        {min: 7,max: 11,message: '长度在 7 到 11 个字符',trigger:"blur"},
-                        ]
-                }
-            }
-
+import {setCookie} from '../../../js/setcookie.js'
+import axios from 'axios'
+import headerBar from "@/components/common/HeaderBar";
+export default {
+  name:"Registr",
+  data(){
+      return{
+          regButtonLoading:false,
+          form:{
+              username:'',
+              password:'',
+              password2:'',
+          },
+          rules:{
+              username:[
+                  {required:true,trigger:'blur',validator:(rule,value,callback)=>{
+                      if(value==''){
+                          callback(new Error('请输入用户名'))
+                      }else if(value.length<=4){
+                          callback(new Error('用户名大于4个字符'))
+                      }
+                      callback()
+                  }}
+              ],
+              password:[
+                  {required:true,trigger:'blur',validator:(rule,value,callback)=>{
+                      if(value==''){
+                          callback(new Error('请输入密码'))
+                      }else if(value.length<=5){
+                          callback(new Error('密码必须大于5个字符'))
+                      }
+                      callback()
+                  }}
+              ],
+              password2:[
+                  {required:true,trigger:'blur',validator:(rule,value,callback)=>{
+                      if(value==''){
+                          callback(new Error('请输入密码'))
+                      }else if(value.length<=5){
+                          callback(new Error('密码必须大于5个字符'))
+                      }else if(value!=this.form.password){
+                          callback(new Error('两次输入密码不一样'))
+                      }
+                      callback()
+                  }}
+              ]
+          }
+      }
+      },
+      components: {
+            headerBar
         },
-        methods: {
-            onRegit(formName){   /*就是表单的ref*/
-                this.$refs[formName].validate((valid) => {
-                    if (valid) {
-                        this.$axios.post("user/registered",this.registrUser)
-                            .then(res =>{
-                                //注册成功
-                                this.$message({
-                                    message: "账号注册成功!",
-                                    type: 'success'
-                                });
-                            })
-                        this.$router.push('/');
-                    } else {
-                        console.log('注册失败!!');
-                        return false;
-                    }
-                });
-            }
-        }
-    };
+      methods:{
+          submit(){
+              this.$refs['form'].validate((valid)=>{
+                  if(valid){
+                      this.requestReg()
+                  }else{
+                      return false;
+                  }
+              })
+          },
+          requestReg(){
+              this.regButtonLoading=true;
+              var username=this.form.username;
+              var password=this.form.password;
+              axios.post('api/user/regist',{
+                  username:username,
+                  password:password,
+              }).then((res)=>{
+                  this.regButtonLoading=false;
+                    if(1 == res.data){
+                        this.$message('用户名已经存在！');
+                    }else{
+                        this.$message('注册成功！')
+                        this.backlogin()
+                        }
+                    })
+            },
+          backlogin(){
+              this.$router.push({name:'Login'})
+          }
+      }
+}
 </script>
+
 <style scoped>
-  #logo{
-    background: url("../../assets/image/login.jpg");
-    position:fixed;
+  div.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
     top: 0;
     left: 0;
-    width:100%;
-    height:100%;
-    min-width: 1000px;
-    z-index:-10;
-    zoom: 1;
-    background-color: #fff;
-    background-repeat: no-repeat;
-    background-size: cover;
-    -webkit-background-size: cover;
-    -o-background-size: cover;
-    background-position: center 0;
+    right: 0;
+    bottom: 0;
+    margin-top: 120px;
+  }
+  .head {
+    display: flex;
+    justify-content: center;
+  }
+  .head span {
+    height: 60px;
+    line-height: 60px;
+    color: #409EFF;
+    font-size: 24px;
+    font-weight: 700;
+  }
+  .form {
+    width: 400px;
+    padding: 20px 50px 20px 0;
+  }
+  .button-container {
+    display: flex;
   }
 </style>
-
