@@ -12,6 +12,7 @@
           <img :src="this.timg" />
         </div>
         <el-button icon="el-icon-back" @click="fh">返回车型页</el-button>
+        <el-button :plain="true" @click="addfa">收藏</el-button>
       </div>
     </div>
     <footer-info></footer-info>
@@ -52,7 +53,46 @@ export default {
   methods: {
     fh() {
       this.$router.push(this.upadd);
-    }
+    },
+    favorite(){
+      this.$axios.get("/api/favorite/favoriteUid",{
+        params:{
+          Uid:1
+        }
+      })
+      .then(response => {
+        for(var i = 0; i<response.data.size();i++){
+          if(response.data[i] == this.$route.params.carid){
+            
+          }
+        }
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+    },
+    addfa() {
+      this.$axios.get("/api/favorite/addfavorite",{
+        params:{
+          Uid:1,
+          Cid:12
+        }
+      })
+      .then(response => {
+        if(response.data>0){
+          this.$message({
+          message: '恭喜你，收藏成功！',
+          type: 'success'
+        });
+        }else{
+          this.$message.error('很遗憾，收藏失败！');
+        }
+      })
+      .catch(function (error) {
+        this.$message.error('很遗憾，收藏失败！');
+        console.log(error);
+      });
+      },
   }
 };
 </script>
