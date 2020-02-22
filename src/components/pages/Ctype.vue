@@ -10,7 +10,7 @@
           <h3 class="product-subheadline high-subheadline">从容锐意，乐享人生</h3>
           <img :src="imgbz" class="high-img" />
           <div class="product-more">
-            <router-link to="/js/high" class="more-product-cta high-cta">了解更多</router-link>
+            <router-link :to="{path:'/js/Car',query:{js:'high'}}" class="more-product-cta high-cta">了解更多</router-link>
             <!-- <div class="more-product-cta high-cta"></div> -->
           </div>
         </div>
@@ -22,7 +22,7 @@
           <h3 class="product-subheadline">锋芒毕露</h3>
           <div class="product-more">
             <!-- <div class="more-product-cta">了解更多</div> -->
-            <router-link to="/js/sport" class="more-product-cta">了解更多</router-link>
+            <router-link :to="{path:'/js/Car',query:{js:'sport'}}" class="more-product-cta">了解更多</router-link>
           </div>
           <div class="f1-img-content">
             <img :src="imgf1" class="f1-img" />
@@ -36,7 +36,7 @@
           <h3 class="product-subheadline">无可阻挡</h3>
           <div class="product-more">
             <!-- <div class="more-product-cta">了解更多</div> -->
-            <router-link to="/js/suv" class="more-product-cta">了解更多</router-link>
+            <router-link :to="{path:'/js/Car',query:{js:'suv'}}" class="more-product-cta">了解更多</router-link>
           </div>
           <img :src="imgsuv" class="suv-img" />
         </div>
@@ -47,7 +47,7 @@
           <h3 class="product-subheadline">进取，永无止境</h3>
           <div class="product-more">
             <!-- <div class="more-product-cta">了解更多</div> -->
-            <router-link to="/js/ete" class="more-product-cta">了解更多</router-link>
+            <router-link :to="{path:'/js/Car',query:{js:'ete'}}" class="more-product-cta">了解更多</router-link>
           </div>
           <div class="e-img-content">
             <img :src="imgts" class="e-img" />
@@ -70,10 +70,10 @@ export default {
       all: {},
       headbar: [],
       machines: [],
-      imgbz: require("../../../src/assets/bcbig.jpg"),
-      imgf1: require("../../../src/assets/banzeF1.jpg"),
-      imgsuv: require("../../../src/assets/luhu2.jpg"),
-      imgts: require("../../../src/assets/tesila.jpg")
+      imgbz: require("../../assets/bcbig.jpg"),
+      imgf1: require("../../assets/banzeF1.jpg"),
+      imgsuv: require("../../assets/luhu2.jpg"),
+      imgts: require("../../assets/tesila.jpg")
     };
   },
   components: {

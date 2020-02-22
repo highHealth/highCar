@@ -28,27 +28,26 @@
             </li>
           </span>
 		    </ul>
-        
       </div>
     </div>
     <div class="content1" v-if="seen"  @mouseenter="on" @mouseleave="over"  >
-      <router-link to="/js/high" class="icontp" @click.native="dj">
+      <router-link :to="{path:'/js/Car',query:{js:'high'}}" class="icontp" v-on:click.native="$router.go(0)">
         <h2 class="xbt">豪华</h2>
         <img :src="imghigh" class="cimg"/><br/>
       </router-link>
-      <router-link to="/js/sport" class="icontp" @click.native="dj">
+      <router-link :to="{path:'/js/Car',query:{js:'sport'}}" class="icontp" v-on:click.native="$router.go(0)">
         <h2 class="xbt">高性能</h2>
         <img :src="imgrun" class="cimg"/><br/>
       </router-link>
-      <router-link to="/js/suv" class="icontp" @click.native="dj">
+      <router-link :to="{path:'/js/Car',query:{js:'suv'}}" class="icontp" v-on:click.native="$router.go(0)">
         <h2 class="xbt">SUV</h2>
         <img :src="imgsuv" class="cimg"/><br/>
       </router-link>
-      <router-link to="/js/ete" class="icontp" @click.native="dj">
+      <router-link :to="{path:'/js/Car',query:{js:'ete'}}" class="icontp" v-on:click.native="$router.go(0)">
         <h2 class="xbt">新能源</h2>
         <img :src="imge" class="cimg"/><br/>
       </router-link>
-      </div>
+    </div>
     <!-- <div class="bagview" id="bag">
       <div class="bag-content">
         <nav class="bagview-nav">
@@ -74,10 +73,10 @@ export default {
     return{
       seen:false,
       showName:true,
-      imghigh:require("../../../src/assets/icon/high_icon.png"),
-      imgrun:require("../../../src/assets/icon/run_icon.jpg"),
-      imgsuv:require("../../../src/assets/icon/suv_icon.png"),
-      imge:require("../../../src/assets/icon/e_icon.png"),
+      imghigh:require("../../assets/icon/high_icon.png"),
+      imgrun:require("../../assets/icon/run_icon.jpg"),
+      imgsuv:require("../../assets/icon/suv_icon.png"),
+      imge:require("../../assets/icon/e_icon.png"),
     }
   },
   methods: {

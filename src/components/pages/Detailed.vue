@@ -12,7 +12,7 @@
           <img :src="this.timg" />
         </div>
         <el-button icon="el-icon-back" @click="fh">返回车型页</el-button>
-        <el-button :plain="true" @click="addfa">收藏</el-button>
+        <!-- <el-button :plain="true" @click="addfa">收藏</el-button> -->
       </div>
     </div>
     <footer-info></footer-info>
@@ -43,16 +43,14 @@ export default {
       })
       .then(response => {
         this.cardata = response.data;
-        this.timg = require("../../../src/assets/datu/" +
+        this.timg = require("../../assets/datu/" +
           this.cardata.img +
           ".jpg");
-        this.upadd = "/js/" + this.cardata.mark;
-        console.log(this.upadd);
       });
   },
   methods: {
     fh() {
-      this.$router.push(this.upadd);
+      this.$router.go(-1);
     },
     favorite(){
       this.$axios.get("/api/favorite/favoriteUid",{

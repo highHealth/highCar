@@ -24,7 +24,7 @@ export default {
       list: [],
       prolists: [],
       body: {},
-      img:require("../../../src/assets/offwx.jpg"),
+      img:require("../../assets/offwx.jpg"),
     };
   },
   components: {

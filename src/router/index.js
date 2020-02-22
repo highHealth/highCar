@@ -15,6 +15,7 @@ import OfficialWX from '@/components/pages/OfficialWX.vue'  // 官方微信
 import BrandStory from '@/components/pages/BrandStory.vue'  // 品牌文化
 import Login from '@/components/pages/login/Login.vue'      // 登陆
 import Registr from '@/components/pages/login/Registr.vue'  // 注册
+import error from '@/components/pages/404.vue'  // 404
 
 Vue.use(Router)
 
@@ -47,9 +48,8 @@ export default new Router({
       component: Map
     },
     {
-      path: '/js/:name',
-      name: 'js',
-      component: js
+      path: '/js/Car/',
+      component:js
     },
     {
       path:'/data/:carid',
@@ -91,6 +91,13 @@ export default new Router({
       name: 'BrandStory',
       component:BrandStory
     },
-    
+    {
+      path:'/error',
+      component:error
+    },
+    {
+      path: '*', // 404 页面
+      redirect:'/error'
+    }
   ]
 })

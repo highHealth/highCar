@@ -50,13 +50,13 @@ export default {
     this.$axios
       .get("/api/car/type", {
         params: {
-          type: this.$route.params.name
+          type: this.$route.query.js
         }
       })
       .then(response => {
         this.car = response.data;
         for (var i = 0; i < this.car.length; i++) {
-          this.car[i].img = require("../../../src/assets/js/" +
+          this.car[i].img = require("../../assets/js/" +
             this.car[i].img +
             ".png");
         }
