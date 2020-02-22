@@ -37,8 +37,8 @@
           <h3 class="section-title">售后</h3>
         </div>
         <ul class="section-list">
-          <li class="section-item">全国售后维修</li>
-          <li class="section-item">保险及赔偿</li>
+          <router-link to="/support" class="section-item">全国售后维修</router-link>
+          <!-- <li class="section-item">保险及赔偿</li> -->
         </ul>
       </div>
       <div class="section">
@@ -86,6 +86,8 @@ export default {
   width: 980px;
   height: 234px;
   margin: auto;
+  position: relative;
+  left: 35px;
 }
 .section {
   width: 20%;

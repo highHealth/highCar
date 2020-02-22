@@ -364,8 +364,8 @@ export default {
   color:white;
   text-rendering: auto;
   letter-spacing: normal;
-  margin-top:16px
-
+  margin-top:16px;
+  cursor:pointer
 }
 .ads-wrapper {
   position: absolute;
