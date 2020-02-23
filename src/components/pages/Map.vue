@@ -33,6 +33,7 @@ export default {
       )
       .then(function(res){
         //   alert("XIXI")
+        
         var cc = res.data;
         // alert(cc)
      })
