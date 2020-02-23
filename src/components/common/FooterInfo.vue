@@ -6,12 +6,26 @@
           <h3 class="section-title">车型</h3>
         </div>
         <ul class="section-list">
-          <li class="section-item">小型汽车</li>
-          <li class="section-item">大型汽车</li>
-          <li class="section-item">豪华汽车</li>
-          <li class="section-item">SUV</li>
-          <li class="section-item">高性能跑车</li>
-          <li class="section-item">新能源</li>
+          <li class="section-item">
+            <router-link :to="{path:'/js/Car',query:{js:'high'}}" class="section-item">
+              豪华汽车
+            </router-link>
+          </li>
+          <li class="section-item">
+            <router-link :to="{path:'/js/Car',query:{js:'sport'}}" class="section-item">
+              高性能
+            </router-link>
+          </li>
+          <li class="section-item">
+          <router-link :to="{path:'/js/Car',query:{js:'suv'}}" class="section-item">
+            SUV
+          </router-link>
+          </li>
+          <li class="section-item">
+          <router-link :to="{path:'/js/Car',query:{js:'ete'}}" class="section-item">
+            新能源
+          </router-link>
+          </li>
         </ul>
       </div>
       <div class="section">
@@ -19,9 +33,16 @@
           <h3 class="section-title">新闻</h3>
         </div>
         <ul class="section-list">
-          <li class="section-item">品牌新闻</li>
-          <li class="section-item">车队新闻</li>
-          <li class="section-item">新车测评</li>
+          <li class="section-item">
+            <router-link to="/News" class="section-item">
+              品牌新闻
+            </router-link>
+          </li>
+          <li class="section-item">
+            <router-link to="/News" class="section-item">
+              新车测评
+            </router-link>
+          </li>
         </ul>
       </div>
       <div class="section">
