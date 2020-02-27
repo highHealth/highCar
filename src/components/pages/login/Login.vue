@@ -76,7 +76,7 @@ export default {
         .then(res => {
           this.loginButtonLoading = false;
             if (0 == res.data) {
-              var cookie_name = unescape(setCookie.setInfo().username);
+              // var cookie_name = unescape(setCookie.setInfo().username);
               if (
                 (cookie_name != name && name != "" && cookie_name != "") ||
                 cookie_name == ""
