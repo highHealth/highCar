@@ -44,7 +44,7 @@ export default {
   name: "BrandStory",
   data() {
     return {
-      img:require("../../../src/assets/contactus.jpg"),
+      img:require("../../assets/contactus.jpg"),
     };
   },
   components: {

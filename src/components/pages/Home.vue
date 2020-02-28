@@ -87,12 +87,12 @@ import { swiper, swiperSlide } from 'vue-awesome-swiper'
 export default {
   data() {
     return {
-      img6:require("../../../src/assets/luhu3.jpg"),
-      img7:require("../../../src/assets/bsj1.jpg"),
-      img8:require("../../../src/assets/rs3.jpg"),
-      img9:require("../../../src/assets/lz3.jpg"),
-      img10:require("../../../src/assets/aodi2.jpg"),
-      fxp2:require("../../../src/assets/fxp2.jpg"),
+      img6:require("../../assets/luhu3.jpg"),
+      img7:require("../../assets/bsj1.jpg"),
+      img8:require("../../assets/rs3.jpg"),
+      img9:require("../../assets/lz3.jpg"),
+      img10:require("../../assets/aodi2.jpg"),
+      fxp2:require("../../assets/fxp2.jpg"),
       major: [],
       ads: [],
       swiperOption: {
@@ -131,19 +131,19 @@ export default {
         swiperList:[
                 {
                     id:'001',
-                    imgUrl:require("../../../src/assets/luhu2.jpg"),
+                    imgUrl:require("../../assets/luhu2.jpg"),
                     text:'非凡驾驭',
                     text2:'全新出品DEFENDER',
                 },
                 {
                     id:'002',
-                    imgUrl:require("../../../src/assets/luhu1.jpg"),
+                    imgUrl:require("../../assets/luhu1.jpg"),
                     text:'艺揽胜境',
                     text2:'智能高科技豪华全地形SUV',
                 },
                 {
                     id:'003',
-                    imgUrl:require("../../../src/assets/luhu3.jpg"),
+                    imgUrl:require("../../assets/luhu3.jpg"),
                     text:'势如暴风',
                     text2:'越野家族的前卫车型',
                 }
@@ -157,7 +157,7 @@ export default {
     },
     mounted() {
       // 然后你就可以使用当前上下文内的swiper对象去做你想做的事了
-      console.log('this is current swiper instance object', this.swiper)
+      // console.log('this is current swiper instance object', this.swiper)
       //this.swiper.slideTo(3, 1000, false)
     },
   components: {

@@ -52,7 +52,7 @@ export default {
       })
       .then(response => {
         this.news = response.data
-        this.nimg = require("../../../src/assets/news/" + this.news.img + ".jpg");
+        this.nimg = require("../../assets/news/" + this.news.img + ".jpg");
       })
       .catch(error => {
         alert("网络错误不能访问");

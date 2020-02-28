@@ -27,7 +27,8 @@
 </template>
 
 <script>
-import { setCookie } from "../../../js/setcookie.js";
+// import { setCookie } from "../../../js/setcookie.js";
+import {setCookie} from "../../../tools/cookie.js";
 import axios from "axios";
 //import footerInfo from "@/components/common/FooterInfo";
 import headerBar from "@/components/common/HeaderBar";
@@ -76,26 +77,29 @@ export default {
         .then(res => {
           this.loginButtonLoading = false;
             if (0 == res.data) {
-              var cookie_name = unescape(setCookie.setInfo().username);
-              if (
-                (cookie_name != name && name != "" && cookie_name != "") ||
-                cookie_name == ""
-              ) {
-                setCookie.getInfo(self.username, self.password);
-                setCookie.rememberPass();
-                this.$message("登陆成功");
-                //this.$refs.headerBar.showName = false;
-                this.$router.push({ name: "Home" });
-                //localStorage.setItem('token',res.data.token);
-                //this.handleUsername()
-                //this.$store.commit('handleUsername',username);
-              } else if (
-                cookie_name == name &&
-                name != "" &&
-                cookie_name != ""
-              ) {
-                self.$message("登陆成功");
-              }
+              setCookie("username",username,600);
+              this.$message("登陆成功");
+              this.$router.push({ name: "Home" });
+              // var cookie_name = unescape(setCookie.setInfo().username);
+              // if (
+              //   (cookie_name != name && name != "" && cookie_name != "") ||
+              //   cookie_name == ""
+              // ) {
+              //   setCookie.getInfo(self.username, self.password);
+              //   setCookie.rememberPass();
+              //   this.$message("登陆成功");
+              //   //this.$refs.headerBar.showName = false;
+              //   this.$router.push({ name: "Home" });
+              //   //localStorage.setItem('token',res.data.token);
+              //   //this.handleUsername()
+              //   //this.$store.commit('handleUsername',username);
+              // } else if (
+              //   cookie_name == name &&
+              //   name != "" &&
+              //   cookie_name != ""
+              // ) {
+              //   self.$message("登陆成功");
+              // }
             } else if(1 == res.data || 2 == res.data){
               this.showName = true;
               this.$message("用户不存在或者密码错误");

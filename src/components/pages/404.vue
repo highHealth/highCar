@@ -1,6 +1,8 @@
 <template>
   <div class="notfound">
-    <img src="../assets/image/404.gif">
+    <router-link to='/'>
+      <img src="../../assets/404.gif">
+    </router-link>
   </div>
 </template>
 

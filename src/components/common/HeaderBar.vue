@@ -5,10 +5,10 @@
       <div class="headbar">
         <ul class="header-list">
           <li class="header-item head-models">
-            <router-link to="/" >首页</router-link>
+            <router-link to="/">首页</router-link>
           </li>
           <li class="header-item head-models">
-            <router-link to="/type" @mouseenter.native="on" >车型</router-link>
+            <router-link to="/type" @mouseenter.native="on">车型</router-link>
           </li>
           <li class="header-item head-watch">
             <router-link to="/News">新闻</router-link>
@@ -19,36 +19,65 @@
           <li class="header-item head-mu">
             <router-link to="/mu">关于我们</router-link>
           </li>
-          <span v-show="showName" index="99">
-            <li class="header-item head-registered head-xi" >
+          <span v-if="this.username === ''" index="99">
+            <li class="header-item head-registered head-xi">
               <router-link to="/login" style="font-size:12px;">登陆</router-link>
             </li>
             <li class="header-item head-registered">
               <router-link to="/Registr" style="font-size:12px;">注册</router-link>
             </li>
           </span>
-		    </ul>
-        
+          <span v-else-if="this.username != ''" index="99">
+            <el-dropdown class="header-item dropdown">
+              <span >欢迎：{{this.username}}</span>
+              <el-dropdown-menu slot="dropdown">
+                <el-dropdown-item>
+                  <p @click="outt"> 退出</p>
+                  </el-dropdown-item>
+              </el-dropdown-menu>
+            </el-dropdown>
+          </span>
+        </ul>
       </div>
     </div>
-    <div class="content1" v-if="seen"  @mouseenter="on" @mouseleave="over"  >
-      <router-link to="/js/high" class="icontp" @click.native="dj">
+    <div class="content1" v-if="seen" @mouseenter="on" @mouseleave="over">
+      <router-link
+        :to="{path:'/js/Car',query:{js:'high'}}"
+        class="icontp"
+        v-on:click.native="$router.go(0)"
+      >
         <h2 class="xbt">豪华</h2>
-        <img :src="imghigh" class="cimg"/><br/>
+        <img :src="imghigh" class="cimg" />
+        <br />
       </router-link>
-      <router-link to="/js/sport" class="icontp" @click.native="dj">
+      <router-link
+        :to="{path:'/js/Car',query:{js:'sport'}}"
+        class="icontp"
+        v-on:click.native="$router.go(0)"
+      >
         <h2 class="xbt">高性能</h2>
-        <img :src="imgrun" class="cimg"/><br/>
+        <img :src="imgrun" class="cimg" />
+        <br />
       </router-link>
-      <router-link to="/js/suv" class="icontp" @click.native="dj">
+      <router-link
+        :to="{path:'/js/Car',query:{js:'suv'}}"
+        class="icontp"
+        v-on:click.native="$router.go(0)"
+      >
         <h2 class="xbt">SUV</h2>
-        <img :src="imgsuv" class="cimg"/><br/>
+        <img :src="imgsuv" class="cimg" />
+        <br />
       </router-link>
-      <router-link to="/js/ete" class="icontp" @click.native="dj">
+      <router-link
+        :to="{path:'/js/Car',query:{js:'ete'}}"
+        class="icontp"
+        v-on:click.native="$router.go(0)"
+      >
         <h2 class="xbt">新能源</h2>
-        <img :src="imge" class="cimg"/><br/>
+        <img :src="imge" class="cimg" />
+        <br />
       </router-link>
-      </div>
+    </div>
     <!-- <div class="bagview" id="bag">
       <div class="bag-content">
         <nav class="bagview-nav">
@@ -65,41 +94,33 @@
           </ul>
         </nav>
       </div>
-    </div> -->
+    </div>-->
   </div>
 </template>
 <script>
+import { getCookie, delCookie } from "../../tools/cookie.js";
 export default {
-  data(){
-    return{
-      seen:false,
-      showName:true,
-      imghigh:require("../../../src/assets/icon/high_icon.png"),
-      imgrun:require("../../../src/assets/icon/run_icon.jpg"),
-      imgsuv:require("../../../src/assets/icon/suv_icon.png"),
-      imge:require("../../../src/assets/icon/e_icon.png"),
-    }
+  data() {
+    return {
+      seen: false,
+      username: getCookie("username"),
+      imghigh: require("../../assets/icon/high_icon.png"),
+      imgrun: require("../../assets/icon/run_icon.jpg"),
+      imgsuv: require("../../assets/icon/suv_icon.png"),
+      imge: require("../../assets/icon/e_icon.png")
+    };
   },
   methods: {
-    // showBag(v) {
-    //   // console.log(v);
-    //   var bag = document.getElementById("bag");
-    //   if (v.target.className == "icon iconfont icon-bag-copy") {
-    //     bag.style.display = "block";
-    //   } else {
-    //     bag.style.display = "none";
-    //   }
-    // },
-    on(){
+    on() {
       this.seen = true;
-
     },
-    dj(){
-      window.location.reload();
-    },
-    over(){
+    over() {
       this.seen = false;
-
+    },
+    outt(){
+      this.$message("正在退出");
+      delCookie("username");
+      this.$router.go(0);
     }
   }
 };
@@ -109,11 +130,11 @@ export default {
   margin: 0;
   padding: 0;
 }
-.cimg{
+.cimg {
   margin-top: 3px;
 }
-.icontp{
-  text-decoration:none;
+.icontp {
+  text-decoration: none;
   font-size: 10px;
   float: left;
   margin-left: 220px;
@@ -124,18 +145,18 @@ export default {
   height: 40px;
   background: #504;
 }
-.xbt{
-  color:rgb(0, 0, 0);
+.xbt {
+  color: rgb(0, 0, 0);
   margin-top: 3px;
   margin-left: 26px;
   font-style: normal;
   font-family: "SF Pro SC", "HanHei SC", "SF Pro Text", "Myriad Set Pro",
     "PingFang SC", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
-.btext{
+.btext {
   height: 70px;
   width: 120px;
-  color:rgb(0, 0, 0);
+  color: rgb(0, 0, 0);
   font-size: 2px;
   /* border-style:solid;
 	border-color:red; */
@@ -153,7 +174,10 @@ export default {
   line-height: 40px;
   font-style: normal;
 }
-.logo{
+.dropdown{ 
+margin-top: 10px;
+}
+.logo {
   vertical-align: bottom;
   width: 60px;
   height: 50px;
@@ -162,7 +186,7 @@ export default {
   width: 100%;
   height: 98px;
   background: rgba(0, 0, 0, 0.8);
-  padding-top:10px 
+  padding-top: 10px;
 }
 .content1 {
   width: 100%;
@@ -172,7 +196,7 @@ export default {
 .headbar {
   width: 900px;
   height: 60px;
-  margin: auto; 
+  margin: auto;
 }
 .header-list {
   padding: 0;
@@ -184,7 +208,7 @@ export default {
   color: white;
   font-size: 16px;
   font-weight: 100;
-  margin-top:30px;
+  margin-top: 30px;
 }
 .header-item {
   height: 50px;
@@ -193,11 +217,10 @@ export default {
   display: inline-block;
   vertical-align: top;
   opacity: 1;
-  font: normal  16px/3.42857 "Microsoft YaHei",Helvetica,Arial,serif;
-    line-height: normal;
-
+  font: normal 16px/3.42857 "Microsoft YaHei", Helvetica, Arial, serif;
+  line-height: normal;
 }
-.head-logo{
+.head-logo {
   margin-left: 0px;
 }
 .header-item a {
@@ -212,7 +235,7 @@ export default {
 }
 .header-item :hover {
   opacity: 0.85;
-  color:rgba(89, 201, 37, 0.967)
+  color: rgba(89, 201, 37, 0.967);
 }
 
 .head-tea {
@@ -328,14 +351,13 @@ export default {
 .bagview-nav-link:hover {
   text-decoration: underline;
 }
-.head-registered{
-    margin: 0 ;
-    height: 20px;
-    line-height: 20px;
-    
+.head-registered {
+  margin: 0;
+  height: 20px;
+  line-height: 20px;
 }
-.head-xi{
-    margin-left: 120px;
+.head-xi {
+  margin-left: 120px;
 }
 </style>
 
