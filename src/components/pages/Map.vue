@@ -32,7 +32,7 @@ export default {
         "api/dealers/showMap"
       )
       .then(function(res){
-          //alert("XIXI")
+          //alert("XIXI" )
         var cc = res.data;
           //alert(cc)
      })
