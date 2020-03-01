@@ -237,7 +237,6 @@ margin-top: 10px;
   opacity: 0.85;
   color: rgba(89, 201, 37, 0.967);
 }
-
 .head-tea {
   margin-left: 0;
   width: 40px;
@@ -360,5 +359,3 @@ margin-top: 10px;
   margin-left: 120px;
 }
 </style>
-
-
