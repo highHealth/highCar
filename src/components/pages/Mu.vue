@@ -1,9 +1,11 @@
 <template>
   <div class="body">
     <header-bar></header-bar>
-    <!-- <div class="content">
-
-    </div> -->
+    <div class="top"></div>
+        <iframe src="http://player.bilibili.com/player.html?aid=29120965&cid=50538626&page=1" 
+        scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" class="video"> 
+        </iframe>
+        <div class="top"></div>
     <footer-info></footer-info>
   </div>
 </template>
@@ -24,23 +26,22 @@ export default {
     footerInfo
   },
   mounted: function() {
-    // axios
-    //   .get(
-    //     "https://www.easy-mock.com/mock/5a67ef8cbdf9f5437bb4979a/Data/supportData"
-    //   )
-    //   .then(response => {
-    //     this.list = response.data.list;
-    //     this.prolists = response.data.prolists;
-    //     this.body = response.data.body;
-    //   })
-    //   .catch(error => {
-    //     alert("网络错误不能访问");
-    //   });
   }
 }
 </script>
 <style scoped>
-
+.body{
+  text-align:center;
+  background-color: black;
+}
+.video{
+  width:44%;
+   height:355px;
+   margin:0 auto
+}
+.top{
+  height: 28px;
+}
 </style>
 
 

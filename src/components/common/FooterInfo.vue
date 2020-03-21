@@ -7,22 +7,22 @@
         </div>
         <ul class="section-list">
           <li class="section-item">
-            <router-link :to="{path:'/js/Car',query:{js:'high'}}" class="section-item">
+            <router-link :to="{path:'/js/Car',query:{js:'high'}}" class="section-item" v-on:click.native="$router.go(0)">
               豪华汽车
             </router-link>
           </li>
           <li class="section-item">
-            <router-link :to="{path:'/js/Car',query:{js:'sport'}}" class="section-item">
+            <router-link :to="{path:'/js/Car',query:{js:'sport'}}" class="section-item" v-on:click.native="$router.go(0)">
               高性能
             </router-link>
           </li>
           <li class="section-item">
-          <router-link :to="{path:'/js/Car',query:{js:'suv'}}" class="section-item">
+          <router-link :to="{path:'/js/Car',query:{js:'suv'}}" class="section-item" v-on:click.native="$router.go(0)">
             SUV
           </router-link>
           </li>
           <li class="section-item">
-          <router-link :to="{path:'/js/Car',query:{js:'ete'}}" class="section-item">
+          <router-link :to="{path:'/js/Car',query:{js:'ete'}}" class="section-item" v-on:click.native="$router.go(0)">
             新能源
           </router-link>
           </li>
