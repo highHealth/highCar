@@ -3,6 +3,9 @@
   <div>
     <div class="content">
       <div class="headbar">
+        <div class="header-logo">
+          <img :src="imglogow" class="imglogo" />
+        </div>
         <ul class="header-list">
           <li class="header-item head-models">
             <router-link to="/">首页</router-link>
@@ -107,7 +110,9 @@ export default {
       imghigh: require("../../assets/icon/high_icon.png"),
       imgrun: require("../../assets/icon/run_icon.jpg"),
       imgsuv: require("../../assets/icon/suv_icon.png"),
-      imge: require("../../assets/icon/e_icon.png")
+      imge: require("../../assets/icon/e_icon.png"),
+      imglogo: require("../../assets/icon/logo.png"),
+      imglogow: require("../../assets/icon/logow.png")
     };
   },
   methods: {
@@ -132,6 +137,10 @@ export default {
 }
 .cimg {
   margin-top: 3px;
+}
+.imglogo{
+  width: 150px;
+  height: 100%;
 }
 .icontp {
   text-decoration: none;
@@ -184,8 +193,8 @@ margin-top: 10px;
 }
 .content {
   width: 100%;
-  height: 98px;
-  background: rgba(0, 0, 0, 0.8);
+  height: 88px;
+  background: rgba(0, 0, 0, 0.7);
   padding-top: 10px;
 }
 .content1 {
@@ -194,7 +203,7 @@ margin-top: 10px;
   background: #f7f5f6;
 }
 .headbar {
-  width: 900px;
+  width: 1200px;
   height: 60px;
   margin: auto;
 }
@@ -204,11 +213,21 @@ margin-top: 10px;
   /* position: absolute; */
   cursor: pointer;
   list-style: none;
-  width: 1000px;
+  width: 1200px;
   color: white;
   font-size: 16px;
   font-weight: 100;
-  margin-top: 30px;
+  margin-top: 20px;
+}
+.header-logo{
+  height: 50px;
+  width: 120px;
+  line-height: 50px;
+  /* display: inline-block; */
+  vertical-align: top;
+  line-height: normal;
+  float: left;
+  margin-right: 60px;
 }
 .header-item {
   height: 50px;
@@ -216,7 +235,7 @@ margin-top: 10px;
   margin-left: 80px;
   display: inline-block;
   vertical-align: top;
-  opacity: 1;
+  opacity: 0.9;
   font: normal 16px/3.42857 "Microsoft YaHei", Helvetica, Arial, serif;
   line-height: normal;
 }
