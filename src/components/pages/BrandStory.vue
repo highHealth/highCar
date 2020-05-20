@@ -18,9 +18,13 @@
           <br>
           每周一至周五9:00-18:00拨打免费热线电话400-888-8888<br>
           <br>
-          添加微信公众平台帐号“路猫中国”进行咨询<br>
+          添加微信公众平台帐号
+          <router-link to="/officialWX" class="section-item">“路猫中国”</router-link>
+          进行咨询<br>
           <br>
-          通过微博主页 @路猫中国 了解更多<br>
+          通过微博主页 
+          <a class="section-item" href="https://weibo.com/landroverchina?profile_ftype=1&is_all=1#_0" target="officalWeibo" >@路猫中国</a> 
+           了解更多<br>
           <br>
           <br>
           我们随时为您提供帮助。</p>
@@ -44,7 +48,7 @@ export default {
   name: "BrandStory",
   data() {
     return {
-      img:require("../../assets/contactus.jpg"),
+      img:require("../../assets/pinpai.jpg"),
     };
   },
   components: {
@@ -55,6 +59,19 @@ export default {
 </script>
 >
 <style>
+    .section-item {
+        color: #888;
+        margin-bottom: 6px;
+        font-size: 14px;
+        text-align: -webkit-match-parent;
+        text-decoration: none;
+    }
+    .section-item:hover {
+        cursor: pointer;
+        text-decoration: underline;
+        color: black;
+        text-decoration-color: black;
+    }
     #aboutUs{
         width: calc(100vw - 87px);
         margin-left: 30px;

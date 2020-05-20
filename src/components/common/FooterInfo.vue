@@ -121,6 +121,7 @@ export default {
 .section-item {
   color: #888;
   margin-bottom: 6px;
+  font-size: 16px;
   text-align: -webkit-match-parent;
   text-decoration: none;
 }

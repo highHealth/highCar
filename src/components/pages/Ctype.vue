@@ -38,8 +38,10 @@
             <!-- <div class="more-product-cta">了解更多</div> -->
             <router-link :to="{path:'/js/Car',query:{js:'suv'}}" class="more-product-cta">了解更多</router-link>
           </div>
-          <img :src="imgsuv" class="suv-img" />
         </div>
+        <div class="f1-img-content">
+            <img :src="imgsuv" class="suv-img" />
+          </div>
       </div>
       <div class="section-e">
         <div class="e-content">
@@ -70,10 +72,10 @@ export default {
       all: {},
       headbar: [],
       machines: [],
-      imgbz: require("../../assets/bcbig.jpg"),
-      imgf1: require("../../assets/banzeF1.jpg"),
-      imgsuv: require("../../assets/luhu2.jpg"),
-      imgts: require("../../assets/tesila.jpg")
+      imgbz: require("../../assets/hxcx.jpg"),
+      imgf1: require("../../assets/gxncar.jpg"),
+      imgsuv: require("../../assets/xixixi.jpg"),
+      imgts: require("../../assets/lalala.jpg")
     };
   },
   components: {
@@ -103,6 +105,10 @@ export default {
 * {
   margin: 0;
   padding: 0;
+}
+.suv-content{
+  width: 100%;
+  height: 100px;
 }
 .app {
   width: 100%;
