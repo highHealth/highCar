@@ -43,9 +43,9 @@ export default {
       })
       .then(response => {
         this.cardata = response.data;
-        this.timg = require("../../assets/datu/" +
+        this.timg = require("../../assets/js/" +
           this.cardata.img +
-          ".jpg");
+          ".png");
       });
   },
   methods: {
