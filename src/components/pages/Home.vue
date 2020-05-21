@@ -88,7 +88,7 @@ export default {
   data() {
     return {
       img6:require("../../assets/luhu3.jpg"),
-      img7:require("../../assets/bsj1.jpg"),
+      img7:require("../../assets/vvt.jpg"),
       img8:require("../../assets/rs3.jpg"),
       img9:require("../../assets/lz3.jpg"),
       img10:require("../../assets/aodi2.jpg"),
